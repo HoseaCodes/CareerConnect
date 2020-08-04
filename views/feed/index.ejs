@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Boards</title>
+    <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+  <!-- Materialize Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS Framework -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- JavaScript for Materialize -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Bootstrap CSS Framework -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #607d8b;">
+    <a class="navbar-brand" href="https://i.imgur.com/4qnq9XE.mp4">Career Connection</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/feed">Networking</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Careers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user">Profile</a>
+        </li>
+        <li class="nav-item">
+          <% if (user) { %>
+            <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+          <% } else { %>
+            <a href="/auth/google"> <i class="material-icons left"><span class="blue-grey-text text-darken-2">vpn_key</span></i><label>Login with Google</label></span></a>
+          <% } %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+    <h1>Latest Feed</h1>
+    <div class="container">
+        <div class="row">
+          <div id="hunters" class="col s12">
+            <% hunters.forEach(function(hunter) { %>
+              <div class="card blue-grey">
+                <div class="card-content white-text">
+                  <div>
+                    <span class="card-title">
+                      <i class="small material-icons">perm_identity</i>
+                      <span class="hunter-name"><%= hunter.name %></span>
+                    </span>
+                  </div>
+                  <ul class="collection">
+                    <% hunter.comments.forEach(function(comment, idx) { %>
+                      <form action="/feed/<%idx %>" method="DELETE" class="delete-form" method="POST">                     
+                      <li class="collection-item blue-grey-text text-darken-2"><%= comment.text %></li>
+                        <button type="submit">🗑</button>
+                      </form>
+                    <% }) %>
+                  </ul>
+                  <!-- Add Dynamic UI form below this line -->
+                  <% if (hunter._id.equals(user && user._id)) { %>
+                  <div class="card-action">
+                    <form action="/feed" method="POST">
+                      <input type="text" name="text" class="white-text">
+                      <button type="submit" class="btn white-text">Add Comment</button>
+                    </form>
+                  </div>
+                <% } %>
+                </div>
+              </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+
+
+
+</body>
+</html>

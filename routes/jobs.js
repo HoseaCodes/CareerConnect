@@ -1,6 +1,7 @@
-const express = require('express');
-const router = express.Router();
-const Job = require('');
+const router = require('express').Router();
+const jobsCtrl = require('../controllers/jobs');
+
+router.get('/jobs', jobsCtrl.index);
 
 router.get('/', function(req, res) {
     res.render('jobs/index', {

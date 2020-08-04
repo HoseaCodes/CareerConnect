@@ -1,6 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const jobHunter = require('../models/job')
+const Hunter = require('../models/hunter')
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -9,12 +9,12 @@ passport.use(new GoogleStrategy({
 },
 function(accessToken, refreshToken, profile, cb) {
     //user has logged in with OAuth
-    jobHunter.findOne({'googleId': profile.id}, function(err, hunter) {
+    Hunter.findOne({'googleId': profile.id}, function(err, hunter) {
         if (err) return cb(err);
         if (hunter) {
             return cb(null, hunter);
         } else {
-            const newHunter = new jobHunter({
+            const newHunter = new Hunter({
                 name: profile.displayName,
                 email: profile.emails[0].value,
                 googleId: profile.id
@@ -33,7 +33,7 @@ passport.serializeUser(function(hunter, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-    jobHunter.findById(id, function(err, hunter) {
+    Hunter.findById(id, function(err, hunter) {
         done(err, hunter);
     });
 });

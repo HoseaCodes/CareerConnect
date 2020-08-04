@@ -1,20 +1,15 @@
 const Hunter = require('../models/hunter');
 
 module.exports = {
-  index,
-  
-};
+    index,
+}
 
 function index(req, res) {
     Hunter.find({}, function(err, hunters) {
-      res.render('jobs/index', { 
-        hunters,
-        user: req.user  
-      });
+        res.render('index', {
+            hunters,
+            user: req.user
+        });
     });
-  }
+}
 
- 
-  
-  
-  

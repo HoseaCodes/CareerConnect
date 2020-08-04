@@ -1,0 +1,74 @@
+.container { 
+  display: flex;
+  flex-direction: row;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-right {
+  position: relative;
+  text-align: center;
+}
+
+.text1 {
+  position: absolute;
+  top: 40%;
+  left: 16px;
+  font-size: 50px;
+}
+.text2 {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  font-size: 35px;
+  color: #004a7c;
+}
+ .container-left {
+  display: flex;
+  flex-direction: column;
+  background-color: #004a7c;
+} 
+
+.right-top-container {
+  display: flex;
+}
+
+.about {
+  text-align: center;
+}
+
+h2, h3 {
+  font-family: Peace Sans;
+}
+h2 {
+  color: #004a7c;
+
+}
+
+/* .wrap {
+  overflow: hidden;
+  width: 840px;
+  margin: 0 auto;
+} */
+ 
+/* .tint {
+  position: relative; 
+  margin-right: 0px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: rgba(0,0,0,.2) 3px 5px 5px;
+}  */
+
+/* .tint:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(5, 54, 126, 0.5);
+  transition: all .3s linear;
+} */
