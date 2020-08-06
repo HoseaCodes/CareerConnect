@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<title>Career Connect</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Font -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<!-- 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  -->
+<!-- Personal stylesheet -->
+<link rel="stylesheet" href="/css/user.css">
+<!-- icons -->
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<body>
+  <!-- header -->
+  <header>
+    <ul>
+      <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+      <li><a href="/feed"><i class="fa fa-globe" aria-hidden="true"></i>Networking</a></li>
+      <li><a href="/user"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+      <li><a href="/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i>Careers</a></li>
+      <% if (user) { %>
+        <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
+          Log Out</a></li>
+        <% } else { %>
+        <li><a href="/auth/google"><i class="fa fa-sign-in" aria-hidden="true"></i>
+          Log In with Googlge</a></li>
+          <% } %>
+      <a href="#" title="My Account">
+        <img src="https://i.imgur.com/KB9fMRj.png" style="height:23px;width:23px" alt="Avatar">
+      </a>
+    </ul>
+  </header>
+<!-- Page Container -->
+<div class="container" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="row">
+  
+    <!-- Left Column -->
+    <div class="col">
+
+
+      <% hunters.forEach(function(hunter) { %>
+
+        <span >
+          <% hunter.comments.forEach(function(comment, idx) { %>
+                  
+                
+    </span>
+    <!-- Add Dynamic UI form below this line -->
+    <% if (hunter._id.equals(user && user._id)) { %>
+      <div class="post container hunters">
+        <form action="/feed" method="POST">
+          <h3>Create Profile</h3>
+          <h4><%= hunter.name %></h4>
+          <input type="text" name="job" placeholder="Please Enter Job">
+          <input type="number" name="phoneNo" placeholder="Please Enter Phone Number">
+          <input type="text" name="groups" placeholder="Please Enter A Group">
+          <input type="text" name="events" placeholder="Please Enter An Event You Are Attending">
+          <input type="text" name="workExp" placeholder="Please Enter Your Work Experience">
+          <input type="text" name="projects" placeholder="Please Enter Your Projects">
+          <input type="text" name="education" placeholder="Please Enter Your Education">
+          <button type="submit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Update Profile</button>
+        </form>
+      </div>
+    <% } %>
+    <% }) %>
+<% }) %>
+
+
+
+
+    <!-- Profile -->
+      <div>
+        <div class="profile-container">
+          <h4>Dominique Hosea</h4>
+          <img src="https://i.imgur.com/KB9fMRj.png" style="height:50px;width:50px" alt="Avatar">
+          <hr>
+          <p><i class="fa fa-briefcase" aria-hidden="true"></i>Software Enginer</p>
+          <p><i class="fa fa-home" aria-hidden="true"></i>Houston, TX</p>
+          <p><i class="fa fa-envelope-o" aria-hidden="true"></i>ex@mail.com</p>
+          <p><i class="fa fa-mobile" aria-hidden="true"></i>1-800-HIRE-ME</p>
+          <hr>
+        </div>
+      </div>
+      <br>
+      <!-- Accordin -->
+      <div>
+        <div>
+          <button onclick="myFunction('1')"><i class="fa fa-users" aria-hidden="true"></i>
+            My Groups</button>
+          <div id="1">
+            <p>Some text..</p>
+          </div>
+          <button onclick="myFunction('2')"><i class="fa fa-calendar" aria-hidden="true"></i>
+            My Events</button>
+          <div id="2">
+            <p>Some other text..</p>
+          </div>
+          <button onclick="myFunction('3')"><i class="fa fa-picture-o" aria-hidden="true"></i>
+          </i> My Photos</button>
+        <div id="3">
+      <div >
+      <br>
+
+         <!-- Interests --> 
+      <div >
+        <div >
+          <p>Interests</p>
+          <p>
+            <span>News</span>
+            <span>Sports</span>
+            <span>Fashion</span>
+            <span>Games</span>
+            <span>Friends</span>
+            <span>Food</span>
+            <span>Design</span>
+            <span >Art</span>
+            <span>Photos</span>
+          </p>
+        </div>
+      </div>
+      <br>
+          <!-- End Left Column -->
+    </div>
+        <!-- Middle Column -->
+      <div>
+        <div>
+          <h2><i class="fa fa-briefcase" aria-hidden="true"></i>Work Experience</h2>
+            <div>
+              <h5><b>Front End Developer</b></h5>
+              <h6><i class="fa fa-calendar" aria-hidden="true"></i> Date Worked <span>Current</span></h6>
+              <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+              <hr>
+            </div>
+            <div>
+              <h5><b>Back End Developer</b></h5>
+              <h6><i class="fa fa-calendar" aria-hidden="true"></i> Date Worked </h6>
+              <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+              <hr>
+            </div>
+          </div>
+    
+          <div>
+            <h2><i class="fa fa-code" aria-hidden="true"></i>Projects</h2>
+            <div>
+              <h5><b>Project Ex</b></h5>
+              <h6><i class="fa fa-calendar" aria-hidden="true"></i> Date Deployed/Finished V1</h6>
+              <p>Weather API</p>
+              <hr>
+            </div>
+            <div >
+              <h5 ><b>Project Ex</b></h5>
+              <h6><i class="fa fa-calendar" aria-hidden="true"></i>Date Deployed/Finished V1</h6>
+              <p>Certificate of Completion</p>
+              <hr>
+            </div>
+          </div>
+          <div>
+            <h2><i class="fa fa-certificate" aria-hidden="true"></i> Education</h2>
+            <div>
+              <h5><b>School</b></h5>
+              <h6><i class="fa fa-calendar" aria-hidden="true"></i> Date Attended</h6>
+              <p>Business - Bachelor Degree</p>
+              <hr>
+            </div>
+            <div >
+              <h5 ><b>GA BootCamp</b></h5>
+              <h6><i class="fa fa-calendar" aria-hidden="true"></i>2020</h6>
+              <p>Certificate of Completion</p>
+              <hr>
+            </div>
+          </div>
+    
+    
+        <!-- End Right Column -->
+        </div>
+      <!-- Right Column -->
+    <div>
+      <div>
+        <!-- Upcoming Events -->
+        <div>
+          <p>Upcoming Events:</p>
+          <img src="" alt="" style="width:100%;">
+          <p><strong>Holiday</strong></p>
+          <p>Holiday Date</p>
+          <p><button>Info</button></p>
+        </div>
+      </div>
+      <br>
+      <!-- Friend Request -->
+      <div>
+        <div>
+          <p>Friend Request</p>
+          <img src="https://i.imgur.com/KB9fMRj.png" style="height:50px;width:50px" alt="Avatar"><br>
+          <span>User Name</span>
+          <div>
+            <div>
+              <button title="Accept"><i class="fa fa-check" aria-hidden="true"></i>Add</button>
+            </div>
+            <div >
+              <button title="Decline"><i class="fa fa-times" aria-hidden="true"></i>Deny</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+<!-- End Page Container -->
+</div>
+<br>
+
+<!-- Footer -->
+
+<footer >
+  <div>
+    <a href="https://imgur.com/Mc6BdV0">
+    <img src="https://i.imgur.com/Mc6BdV0.png"  class="Logo" width="100" height="100"/></a>
+  </div>
+  <div>
+    <p> <a href="">About</a></p>
+    <p> <a href="">Advertising</a></p>
+  </div>
+  <div>
+    <p> <a href="">Privacy & Terms</a></p>
+    <p> <a href="">Careers</a></p>
+    <p> <a href="">Community Guidelines</a></p>
+  </div>
+  <div>
+    <p> <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+      <a href="">Questions</a></p>
+    <p> <i class="fa fa-cog" aria-hidden="true"></i>
+      <a href="">Manage your account and privacy</a></p>
+  </div>
+  <div class="social-media">
+    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+    <i class="fa fa-twitter" aria-hidden="true"></i>
+    <i class="fa fa-github" aria-hidden="true"></i>
+  </div>
+</footer>
+
+</body>
+</html>

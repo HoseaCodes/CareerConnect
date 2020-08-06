@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Boards</title>
+    <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
+  <!-- Materialize Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS Framework -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- JavaScript for Materialize -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <ul>
+       <nav>
+        <div class="nav-wrapper">
+            <a href="" class="brand-logo left"></a>
+              <!-- Add login UI here -->
+            <ul class="right">
+                <li><a href="/">Home</a></li>
+                    <li><a href="/jobBoard">Jobs</a></li>
+                    <li><a href="/user">User</a></li>
+                    <li>
+                <% if (user) { %>
+                    <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+                <% } else { %>
+                    <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+                <% } %>
+                    </li>
+           </ul>
+        </div>
+    </nav>
+    
+    <h1> 🖊Edit Comment </h1>
+          <% if (hunter._id.equals(user && user._id)) { %>
+    <form action="/feed/<%= comment._id %>?_method=PUT" method="POST" autocomplete="off" >
+        <input type="text" name="text" required value="<%= comment.text %>">
+        <button type="submit" id="edit-btn">Update Comment</button>
+    </form>
+    <% } %>
+</body>
+</html>

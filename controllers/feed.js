@@ -3,14 +3,16 @@ const Hunter = require('../models/hunter');
 module.exports = {
     index,
     addComment,
-    deleteComment
+    deleteComment,
+    edit,
+    update, 
 }
 
 function index(req, res) {
     Hunter.find({}, function(err, hunters) {
       res.render('feed/index', { 
         hunters, 
-        user: req.user  
+        user: req.user,  
       });
     });
   }
@@ -24,31 +26,34 @@ function index(req, res) {
 
 
   function deleteComment(req, res) {
-    Hunter.deleteComment(req.params.id);
-    res.redirect('/feed')
-  }
+      req.user.comments.splice(req.params.id, 1);
+      req.user.save(function(err) {
+        res.redirect('/feed');    
+      });
+}
 
+function edit(req, res) {
+  Hunter.findById(req.user._id, function(err, hunter) {
+    const comment = hunter.comments.id(req.params.id);
+    console.log(comment);
+    res.render('feed/edit', {
+      hunter, 
+      user: req.user, 
+      comment
+    });
+  });
+}
 
-  // function show(req, res) {
-  //   res.render('feed/show', {
-  //     feed: Feed.getOne(req.params.id),
-  //     feedNum: parseInt(req.params.id) + 1
-  //   });
-  // }
-
-  // function newFeed(req, res) {
-  //   res.render('feed/new', {
-
-  //   });
-  // }
+function update(req, res) {
+  Hunter.findById(req.user._id, function(err, hunter) {
+    const comment = hunter.comments.id(req.params.id);
+    console.log(comment);
+    const oldComment = hunter.comments.indexOf(comment) 
+    console.log(oldComment);
+    hunter.comments.splice(oldComment, 1, req.body);
   
-  // function create(req, res) {
-  //   req.body.name = user;
-  //   Feed.create(req.body);
-  //   res.redirect('/feed');
-  // }
-  
-  // function deleteFeed(req, res) {
-  //   Feed.deleteOne(req.params.id);
-  //   res.redirect('/feeds');
-  // }
+     hunter.save(function (err) {
+       res.redirect(`/feed`);
+     })
+    })
+}

@@ -15,6 +15,7 @@ require('./config/passport');
 const indexRouter = require('./routes/index');
 const jobsRouter = require('./routes/jobs');
 const feedRouter = require('./routes/feed');
+const userRouter = require('./routes/user');
 
 app.set('view engine', 'ejs');
 
@@ -43,9 +44,10 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use ('/', jobsRouter);
 app.use ('/', feedRouter);
+app.use ('/', userRouter);
 
 
-const port = process.env.Port || 3000;
+const port = process.env.PORT || 3000;
 
 app.listen(port, function () {
     console.log(`Listening on port Andre: ${port}`);

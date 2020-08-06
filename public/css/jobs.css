@@ -1,0 +1,84 @@
+body,h1 {font-family: "Raleway", sans-serif}
+
+body, html {height: 100%}
+.bgimg {
+  background-image: url('https://i.imgur.com/Ke4HEYo.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.logo {
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+.midddle {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+h1 {
+  animation-direction: alternate;
+  animation-play-state: running;
+}
+hr {
+  border-color: grey;
+  margin: auto;
+  width: 50%;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #004a7c;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+    background-color: #005691;
+}
+
+footer {
+  background-color: #004a7c;
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  color: white;
+  padding: 14px 16px;
+
+}
+footer a {
+  text-decoration: none;
+
+}
+footer a:hover {
+  background-color: #005691;
+  text-decoration: underline;
+
+}
+footer a:visited {
+  text-decoration: none;
+}
+
+footer a:active {
+  text-decoration: underline;
+}
+.social-media {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
