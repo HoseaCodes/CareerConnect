@@ -1,6 +1,6 @@
 # Career Connect
 
-A web app for gathering and displaying recipes, and food jokes.
+A web app for gathering and displaying new profiles.
 
 ## Screenshots
 ____________________
