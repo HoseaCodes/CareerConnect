@@ -1,0 +1,151 @@
+
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+
+body {
+    background-color: lightgrey;
+}
+/* header */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #004a7c;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+      background-color: #005691;
+      text-decoration: underline;
+  }
+
+  li a:visited {
+      text-decoration: none;
+  }
+
+  li a:active {
+    text-decoration: underline;
+}
+
+.headerImg {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+/* Header End */
+.top {
+  text-align: center;
+}
+.top a {
+  text-decoration: underline;
+  color: #004a7c;
+  font-weight: bold;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.profile-container, .event-container, .interest-container, .work, .projects, .education, .upcoming, .network {
+  padding: 20px 30px;
+  margin: 10px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+
+.midddle{
+  width: 50%;
+}
+
+/* Footer */
+  footer {
+    background-color: #004a7c;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    
+  }
+  footer a {
+    color: white;
+    text-decoration: none;
+
+  }
+  footer a:hover {
+    background-color: #005691;
+    text-decoration: underline;
+
+  }
+  footer a:visited {
+    text-decoration: none;
+}
+
+footer a:active {
+    text-decoration: underline;
+}
+.social-media {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+/* No Login */
+
+.bgimg {
+  background-image: url('https://i.imgur.com/Ke4HEYo.jpg');
+  min-height: 800px;
+  background-position: center;
+  background-size: cover;
+}
+
+.h1 {
+  animation-direction: alternate;
+  animation-play-state: running;
+  position: fixed;
+  bottom: 40%;
+  right: 40%;
+}
+.button {
+  align-content: center;
+  position: fixed;
+  bottom: 35%;
+  right: 43%;
+}
+a {
+  text-decoration: none;
+}
+.hr {
+  border-color: grey;
+  width: 50%;
+  position: fixed;
+  bottom: 38%;
+  right: 20%;
+}
+.logo2 {
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+
+.midddle {
+  display: flex;
+  align-items: center;
+  color: white;
+}

@@ -14,12 +14,36 @@ const hunterSchema = new mongoose.Schema({
   comments: [feedSchema],
   googleId: String,
   job: String,
-  phoneNo: Number,
+  phoneNo: {
+  type: Number,
+  min: 5,
+  max: 10,
+  },
+  location: String,
   groups: String,
-  events: String,
-  workExp: String,
-  projects: String,
-  education: String
+  events: {
+  eventName:String,
+  eventDate: Date,
+  },
+  workExp: {
+   title: String,
+   highlights: String,
+   start: Date,
+   end: Date, 
+  },
+  projects: {
+  title: String,
+  highlights: String,
+  start: Date,
+  end: Date, 
+
+  },
+  education: {
+    school: String,
+    highlights: String,
+    start: Date,
+    end: Date, 
+  },
 }, {
   timestamps: true
 });

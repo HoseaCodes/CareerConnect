@@ -2,7 +2,8 @@ const Hunter = require('../models/hunter');
 
 module.exports = {
     index,
-    addUser
+    new: newForm,
+    addUser,
 }
 
 function index(req, res) {
@@ -14,19 +15,29 @@ function index(req, res) {
     });
 }
 
-  
-  function addUser(req, res, next) {
-    req.user.job.push(req.body);
-    req.user.phoneNo.push(req.body);
-    req.user.groups.push(req.body);
-    req.user.events.push(req.body);
-    req.user.workExp.push(req.body);
-    req.user.project.push(req.body);
-    req.user.education.push(req.body);
-    req.user.save(function(err) {
-      res.redirect('/user');
+function newForm(req, res) {
+    Hunter.find({}, function(err, hunters) {
+        res.render('user/userform', {
+            hunters,
+            user: req.user
+        });
     });
+}
+
+  function addUser(req, res, next) {
+      req.user.job.push(req.body);
+      req.user.phoneNo.push(req.body);
+      req.user.groups.push(req.body);
+      req.user.events.push(req.body);
+      req.user.workExp.push(req.body);
+      req.user.projects.push(req.body);
+      req.user.education.push(req.body);
+      req.user.save(function(err) {
+        res.redirect('/user');
+      });
   }
+
+ 
 
 
 //   function deleteComment(req, res) {

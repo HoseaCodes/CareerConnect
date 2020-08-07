@@ -1,7 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
-
 const session = require('express-session');
 const passport = require('passport');
 

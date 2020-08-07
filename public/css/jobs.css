@@ -1,32 +1,7 @@
 body,h1 {font-family: "Raleway", sans-serif}
 
-body, html {height: 100%}
-.bgimg {
-  background-image: url('https://i.imgur.com/Ke4HEYo.jpg');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
 
-.logo {
-  padding-top: 50px;
-  padding-left: 50px;
-}
-
-.midddle {
-  display: flex;
-  align-items: center;
-  color: white;
-}
-h1 {
-  animation-direction: alternate;
-  animation-play-state: running;
-}
-hr {
-  border-color: grey;
-  margin: auto;
-  width: 50%;
-}
+/* header */
 ul {
   list-style-type: none;
   margin: 0;
@@ -49,18 +24,53 @@ li a {
 
 li a:hover {
     background-color: #005691;
+    text-decoration: underline;
 }
 
+li a:visited {
+    text-decoration: none;
+}
+
+li a:active {
+  text-decoration: underline;
+}
+
+/* Header End */
+
+.top {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.results {
+  padding: 20px 30px;
+  margin: 10px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+
+/* Footer */
 footer {
   background-color: #004a7c;
   display: flex;
   justify-content: space-evenly;
   list-style-type: none;
-  color: white;
-  padding: 14px 16px;
-
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  
 }
 footer a {
+  color: white;
   text-decoration: none;
 
 }
@@ -82,3 +92,84 @@ footer a:active {
   justify-content: space-between;
 
 }
+
+/* No Search */
+.tech {
+  align-self: center;
+  margin-left: 100px;
+  font-family: Peace Sans;
+  color: #004a7c;
+  font-size: 50px;
+  text-shadow: 2px 2px grey;
+  
+}
+.btn {
+  height: 40px;
+}
+.first {
+  font-size: x-large;
+}
+.first, .second, .third {
+  align-self: center;
+}
+.second {
+  margin-left: 500px;
+  font-size: x-large;
+}
+.Logo2 {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+.input {
+  width: 600px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.changer {
+  position: relative;
+  background-color: black;
+  height: 75vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.changer video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+} 
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  
+  header video {
+    display: none;
+  }
+}
+

@@ -5,11 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google Font -->
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<!-- 
+<!-- Secondary Link -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  -->
 <!-- Personal stylesheet -->
-<link rel="stylesheet" href="/css/user.css">
+<link rel="stylesheet" href="/css/user/user.css">
 <!-- icons -->
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <body>
@@ -25,117 +24,93 @@
           Log Out</a></li>
         <% } else { %>
         <li><a href="/auth/google"><i class="fa fa-sign-in" aria-hidden="true"></i>
-          Log In with Googlge</a></li>
+          Log In with Google</a></li>
           <% } %>
       <a href="#" title="My Account">
-        <img src="https://i.imgur.com/KB9fMRj.png" style="height:23px;width:23px" alt="Avatar">
+        <img class="headerImg" src="https://i.imgur.com/KB9fMRj.png" style="height:23px;width:23px" alt="Avatar">
       </a>
     </ul>
   </header>
+  <% hunters.forEach(function(hunter) { %>
+    <% if (hunter._id.equals(user && user._id)) { %>
+  <div class="top">
+    <p>Hello, <%= hunter.name %>, welcome to Career Connect we are glad you picked us to help start your journey. Click here to <a href="/user/userform"><b>start</b></a> .</p>
+  </div> 
 <!-- Page Container -->
 <div class="container" style="max-width:1400px;">
 
-  <!-- The Grid -->
-  <div class="row">
-  
-    <!-- Left Column -->
-    <div class="col">
-
-
-      <% hunters.forEach(function(hunter) { %>
-
-        <span >
-          <% hunter.comments.forEach(function(comment, idx) { %>
-                  
-                
-    </span>
-    <!-- Add Dynamic UI form below this line -->
-    <% if (hunter._id.equals(user && user._id)) { %>
-      <div class="post container hunters">
-        <form action="/feed" method="POST">
-          <h3>Create Profile</h3>
-          <h4><%= hunter.name %></h4>
-          <input type="text" name="job" placeholder="Please Enter Job">
-          <input type="number" name="phoneNo" placeholder="Please Enter Phone Number">
-          <input type="text" name="groups" placeholder="Please Enter A Group">
-          <input type="text" name="events" placeholder="Please Enter An Event You Are Attending">
-          <input type="text" name="workExp" placeholder="Please Enter Your Work Experience">
-          <input type="text" name="projects" placeholder="Please Enter Your Projects">
-          <input type="text" name="education" placeholder="Please Enter Your Education">
-          <button type="submit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Update Profile</button>
-        </form>
-      </div>
-    <% } %>
-    <% }) %>
-<% }) %>
-
-
-
-
     <!-- Profile -->
-      <div>
+   
+                 
+      <div class="left">
         <div class="profile-container">
-          <h4>Dominique Hosea</h4>
-          <img src="https://i.imgur.com/KB9fMRj.png" style="height:50px;width:50px" alt="Avatar">
+          <h4><%= hunter.name %></h4>
+          <img src="<%=hunter.avatar%>" style="height:50px;width:50px" alt="Avatar">
+          <!-- <form action="/user" method="POST" enctype="multipart/form-data">
+            <input type="file" name="inputFile">
+            <input type="submit" class="btn btn-primary">
+        </form> -->
           <hr>
-          <p><i class="fa fa-briefcase" aria-hidden="true"></i>Software Enginer</p>
-          <p><i class="fa fa-home" aria-hidden="true"></i>Houston, TX</p>
-          <p><i class="fa fa-envelope-o" aria-hidden="true"></i>ex@mail.com</p>
-          <p><i class="fa fa-mobile" aria-hidden="true"></i>1-800-HIRE-ME</p>
+          <p><i class="fa fa-briefcase" aria-hidden="true"></i><%= hunter.job %></p>
+          <p><i class="fa fa-home" aria-hidden="true"></i><%=hunter.location %></p>
+          <p><i class="fa fa-envelope-o" aria-hidden="true"></i><%= hunter.email %></p>
+          <p><i class="fa fa-mobile" aria-hidden="true"></i><%= hunter.phoneNo %></p>
           <hr>
         </div>
-      </div>
-      <br>
+        <br>
+      
       <!-- Accordin -->
-      <div>
-        <div>
+        <div class="event-container">
           <button onclick="myFunction('1')"><i class="fa fa-users" aria-hidden="true"></i>
             My Groups</button>
           <div id="1">
             <p>Some text..</p>
+            <p><%= hunter.groups %></p>
           </div>
+          <hr>
+          <br>
           <button onclick="myFunction('2')"><i class="fa fa-calendar" aria-hidden="true"></i>
             My Events</button>
           <div id="2">
             <p>Some other text..</p>
+            <p><%= hunter.events %></p>
           </div>
-          <button onclick="myFunction('3')"><i class="fa fa-picture-o" aria-hidden="true"></i>
-          </i> My Photos</button>
-        <div id="3">
-      <div >
-      <br>
+          <hr>
+          <br>
+        </div>
+        <br>
+      
 
          <!-- Interests --> 
-      <div >
-        <div >
-          <p>Interests</p>
-          <p>
-            <span>News</span>
-            <span>Sports</span>
-            <span>Fashion</span>
-            <span>Games</span>
-            <span>Friends</span>
-            <span>Food</span>
-            <span>Design</span>
-            <span >Art</span>
-            <span>Photos</span>
-          </p>
+        <div class="interest-container">
+            <p>Interests</p>
+            <p>
+              <span><% hunter.intrests %>></span>
+              <span>Sports</span>
+              <span>Fashion</span>
+              <span>Games</span>
+              <span>Friends</span>
+              <span>Food</span>
+              <span>Design</span>
+              <span >Art</span>
+              <span>Photos</span>
+            </p>
         </div>
+        <br>
       </div>
-      <br>
           <!-- End Left Column -->
-    </div>
+    
         <!-- Middle Column -->
-      <div>
-        <div>
+      <div class="middle">
+        <div class="work">
           <h2><i class="fa fa-briefcase" aria-hidden="true"></i>Work Experience</h2>
-            <div>
-              <h5><b>Front End Developer</b></h5>
+            <div class="work">
+              <h5><b><%= hunter.workExp %></b></h5>
               <h6><i class="fa fa-calendar" aria-hidden="true"></i> Date Worked <span>Current</span></h6>
               <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
               <hr>
             </div>
-            <div>
+            <div class="work">
               <h5><b>Back End Developer</b></h5>
               <h6><i class="fa fa-calendar" aria-hidden="true"></i> Date Worked </h6>
               <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
@@ -143,59 +118,58 @@
             </div>
           </div>
     
-          <div>
+          <div class="projects">
             <h2><i class="fa fa-code" aria-hidden="true"></i>Projects</h2>
-            <div>
-              <h5><b>Project Ex</b></h5>
+            <div class="projects">
+              <h5><b><%= hunter.projects %></b></h5>
               <h6><i class="fa fa-calendar" aria-hidden="true"></i> Date Deployed/Finished V1</h6>
               <p>Weather API</p>
               <hr>
             </div>
-            <div >
+            <div class="projects" >
               <h5 ><b>Project Ex</b></h5>
               <h6><i class="fa fa-calendar" aria-hidden="true"></i>Date Deployed/Finished V1</h6>
               <p>Certificate of Completion</p>
               <hr>
             </div>
           </div>
-          <div>
+          <div class="education">
             <h2><i class="fa fa-certificate" aria-hidden="true"></i> Education</h2>
-            <div>
+            <div class="education">
               <h5><b>School</b></h5>
               <h6><i class="fa fa-calendar" aria-hidden="true"></i> Date Attended</h6>
               <p>Business - Bachelor Degree</p>
               <hr>
             </div>
-            <div >
+            <div class="education">
               <h5 ><b>GA BootCamp</b></h5>
               <h6><i class="fa fa-calendar" aria-hidden="true"></i>2020</h6>
               <p>Certificate of Completion</p>
               <hr>
             </div>
           </div>
-    
-    
-        <!-- End Right Column -->
+          <br>
         </div>
+    
+        <!-- End Middle Column -->
+
       <!-- Right Column -->
-    <div>
-      <div>
+    <div class="right">
         <!-- Upcoming Events -->
-        <div>
+        <div class="upcoming">
           <p>Upcoming Events:</p>
-          <img src="" alt="" style="width:100%;">
           <p><strong>Holiday</strong></p>
           <p>Holiday Date</p>
           <p><button>Info</button></p>
         </div>
-      </div>
       <br>
       <!-- Friend Request -->
-      <div>
-        <div>
+      <div class="network">
           <p>Friend Request</p>
           <img src="https://i.imgur.com/KB9fMRj.png" style="height:50px;width:50px" alt="Avatar"><br>
           <span>User Name</span>
+          <hr>
+          <br>
           <div>
             <div>
               <button title="Accept"><i class="fa fa-check" aria-hidden="true"></i>Add</button>
@@ -209,15 +183,27 @@
       <br>
       
     <!-- End Right Column -->
-    </div>
-    
-  <!-- End Grid -->
-  </div>
-  
-<!-- End Page Container -->
 </div>
 <br>
+<!-- End Page Container -->
 
+
+<% } else {  %>
+  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="Logo2">
+      <a href="https://imgur.com/Mc6BdV0"><img src="https://i.imgur.com/Mc6BdV0.png" height="200" width="200" title="source: imgur.com" /></a>  </div>
+    <div class="middle">
+      <div class="logConatiner">
+      <h1 class="h1">Please Log In </h1>
+      <hr class="hr">
+      <button class="button" type="submit"><a href="/auth/google"><i class="fa fa-sign-in" aria-hidden="true"></i>
+        Log In with Google</a></button>
+      </div>
+    </div>
+  </div>
+    
+<% } %>
+<% }) %>
 <!-- Footer -->
 
 <footer >

@@ -5,108 +5,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Boards</title>
     <!-- Personal Stylesheet -->
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/feed/style.css" />
     <!-- icons -->
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   
   </head>
 <body>
    <!-- header -->
-  <header>
+   <header>
     <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/feed">Networking</a></li>
-      <li><a href="/user">Profile</a></li>
-      <li><a href="/jobs">Careers</a></li>
+      <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+      <li><a href="/feed"><i class="fa fa-globe" aria-hidden="true"></i>Networking</a></li>
+      <li><a href="/user"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+      <li><a href="/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i>Careers</a></li>
       <% if (user) { %>
-      <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
-        Log Out</a></li>
-      <% } else { %>
-      <li><a href="/auth/google"><i class="fa fa-sign-in" aria-hidden="true"></i>
-        Log In with Googlge</a></li>
-        <% } %>
+        <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
+          Log Out</a></li>
+        <% } else { %>
+        <li><a href="/auth/google"><i class="fa fa-sign-in" aria-hidden="true"></i>
+          Log In with Google</a></li>
+          <% } %>
+      <a href="#" title="My Account">
+        <img class="profileImg" src="https://i.imgur.com/KB9fMRj.png" style="height:23px;width:23px" alt="Avatar">
+      </a>
     </ul>
   </header>
 <!-- header end -->
 
+<!-- Left Column -->
+
+  <h1>Latest Feed</h1>
+  <div class="box">
+    <div class="left">
+      <div class="news">
+      <h2>Today's News</h2>
+      <form action="/feed" name="newsData" method="post">
+        <% newsData.forEach(function(story) { %>
+        <h4><%= story.title%></h4>
+        <% if (story.text) { %>
+        <h4><%-story.text%></h4>
+        <% } else { %>
+        <% } %>
+        <h4><a href="<%=story.url%>"><%=newsData.url%></a></h4>
+        <hr>
+      <% }) %>
+      <button type="submit">Check Out</button>
+    </form>
+      </div>
+    </div>
+
 <!-- Middle Column -->
-
-    <h1>Latest Feed</h1>
-
-     <!-- Input Box -->
-
-    <!-- Add Dynamic UI form below this line -->
-    <div class="timeline">
+      <div class="timeline">
         <div class="container">
-            <% hunters.forEach(function(hunter) { %>
-
-                    <!-- User Inputs -->
-        
-                    <span >
-                      <% hunter.comments.forEach(function(comment, idx) { %>
-                        <div class="hunters">
-                        <h4><%= hunter.name %></h4>
-                        <img src="https://i.imgur.com/KB9fMRj.png" alt="Avatar" style="width:40px">
-                        <p>Post was created:<%=comment.createdAt %></p>
-                        <p>Post was Updated<%=comment.updatedAt%></p>
-                        <hr>
-                        <p><%= comment.text %>
-                        <% if (hunter._id.equals(user && user._id)) { %>
-                      <button type="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        <a href="/feed/<%= comment._id %>/edit"> Edit Comment</a></button> 
-                      <button type="button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Like</button> 
-                      <form action="/feed/<%= comment._id %>?_method=DELETE" class="delete-form" method="POST">                     
-                        <button type="submit">🗑Delete Post</button></p>
-                      </form>
-                      </div>
-                    
-                    <% } %>
-                    <% }) %>
-
-                </span>
-                <!-- Add Dynamic UI form below this line -->
+          <% hunters.forEach(function(hunter) { %>
+            
+            <!-- User Inputs -->
+            
+          
+          <span >
+            <% hunter.comments.forEach(function(comment, idx) { %>
+              <div class="hunters">
+                <h4><%= hunter.name %></h4>
+                <img src="https://i.imgur.com/KB9fMRj.png" alt="Avatar" style="width:40px">
+                <p>Post was created:<%=comment.createdAt %></p>
+                <p>Post was Updated<%=comment.updatedAt%></p>
+                <hr>
+                <p><%= comment.text %>
                 <% if (hunter._id.equals(user && user._id)) { %>
-                  <div class="post container hunters">
-                    <form action="/feed" method="POST">
-                      <h3>Create A Post</h3>
-                      <input type="text" name="text" placeholder="Project Week Is Insane">
-                      <button type="submit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Create Post</button>
-                    </form>
-                  </div>
-                <% } %>
-            <% }) %>
+                <button type="button"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <a href="/feed/<%= comment._id %>/edit"> Edit Comment</a></button> 
+                <button type="button"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>Like</button> 
+                <form action="/feed/<%= comment._id %>?_method=DELETE" class="delete-form" method="POST">                     
+                  <button type="submit">🗑Delete Post</button></p>
+                </form>
+              </div> 
+              <% } %>
+            <% }) %>   
+          </span>
+
+       <!-- Add Dynamic UI form below this line -->
+          <% if (hunter._id.equals(user && user._id)) { %>
+          <div class="post container hunters">
+            <form action="/feed" method="POST">
+              <h3>Create A Post</h3>
+              <input type="text" name="text" placeholder="Project Week Is Insane">
+              <button type="submit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Create Post</button>
+            </form>
+          </div>
+              <% } %>
+          <% }) %>
         </div>
       </div>
-      
-             
-        
 
-      <!-- Footer -->
-      <footer >
-        <div>
-          <a href="https://imgur.com/Mc6BdV0">
-          <img src="https://i.imgur.com/Mc6BdV0.png"  class="Logo" width="100" height="100"/></a>
-        </div>
-        <div>
-          <p> <a href="">About</a></p>
-          <p> <a href="">Advertising</a></p>
-        </div>
-        <div>
-          <p> <a href="">Privacy & Terms</a></p>
-          <p> <a href="">Careers</a></p>
-          <p> <a href="">Community Guidelines</a></p>
-        </div>
-        <div>
-          <p> <i class="fa fa-question-circle-o" aria-hidden="true"></i>
-            <a href="">Questions</a></p>
-          <p> <i class="fa fa-cog" aria-hidden="true"></i>
-            <a href="">Manage your account and privacy</a></p>
-        </div>
-        <div class="social-media">
-          <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-          <i class="fa fa-github" aria-hidden="true"></i>
-        </div>
-      </footer>
+<!-- Right Column -->
+    <div class="right">
+      <h2>Where to get started!</h2>
+      <h3>Code Training</h3>
+    </div>
+  </div> 
+
+              <!-- Footer -->
+  <footer >
+    <div>
+      <a href="https://imgur.com/Mc6BdV0">
+      <img src="https://i.imgur.com/Mc6BdV0.png"  class="Logo" width="100" height="100"/></a>
+    </div>
+    <div>
+    <p> <a href="">About</a></p>
+    <p> <a href="">Advertising</a></p>
+    </div>
+    <div>
+      <p> <a href="">Privacy & Terms</a></p>
+      <p> <a href="">Careers</a></p>
+      <p> <a href="">Community Guidelines</a></p>
+    </div>
+    <div>
+      <p> <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+      <a href="">Questions</a></p>
+      <p> <i class="fa fa-cog" aria-hidden="true"></i>
+      <a href="">Manage your account and privacy</a></p>
+    </div>
+    <div class="social-media">
+      <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+      <i class="fa fa-twitter" aria-hidden="true"></i>
+      <i class="fa fa-github" aria-hidden="true"></i>
+    </div>
+  </footer>
 </body>
 </html>

@@ -4,43 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Boards</title>
-    <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Baloo&display=swap" rel="stylesheet">
-  <!-- Materialize Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Materialize CSS Framework -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="/css/style.css" />
-  <!-- JavaScript for Materialize -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+  <link rel="stylesheet" href="/css/feed/edit.css" />
 </head>
 <body>
+    <!-- header -->
+  <header>
     <ul>
-       <nav>
-        <div class="nav-wrapper">
-            <a href="" class="brand-logo left"></a>
-              <!-- Add login UI here -->
-            <ul class="right">
-                <li><a href="/">Home</a></li>
-                    <li><a href="/jobBoard">Jobs</a></li>
-                    <li><a href="/user">User</a></li>
-                    <li>
-                <% if (user) { %>
-                    <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
-                <% } else { %>
-                    <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
-                <% } %>
-                    </li>
-           </ul>
-        </div>
-    </nav>
-    
+      <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+      <li><a href="/feed"><i class="fa fa-globe" aria-hidden="true"></i>Networking</a></li>
+      <li><a href="/user"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+      <li><a href="/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i>Careers</a></li>
+      <% if (user) { %>
+        <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
+          Log Out</a></li>
+        <% } else { %>
+        <li><a href="/auth/google"><i class="fa fa-sign-in" aria-hidden="true"></i>
+          Log In with Google</a></li>
+          <% } %>
+      <a href="#" title="My Account">
+        <img class="profileImg" src="https://i.imgur.com/KB9fMRj.png" style="height:23px;width:23px" alt="Avatar">
+      </a>
+    </ul>
+  </header>
+  <div class="container">
     <h1> 🖊Edit Comment </h1>
-          <% if (hunter._id.equals(user && user._id)) { %>
-    <form action="/feed/<%= comment._id %>?_method=PUT" method="POST" autocomplete="off" >
-        <input type="text" name="text" required value="<%= comment.text %>">
-        <button type="submit" id="edit-btn">Update Comment</button>
-    </form>
-    <% } %>
+            <% if (hunter._id.equals(user && user._id)) { %>
+        <form action="/feed/<%= comment._id %>?_method=PUT" method="POST" autocomplete="off" >
+            <input placeholder="Edit Text Here" class="textarea" type="text" name="text" required value="<%= comment.text %>">
+            <button type="submit" id="edit-btn">Update Comment</button>
+        </form>
+        <% } %>
+        <a href="https://imgur.com/bxLx17g"><img src="https://i.imgur.com/bxLx17g.png" title="source: imgur.com" /></a>
+    </div>
+
+    <footer >
+    <div>
+      <a href="https://imgur.com/Mc6BdV0">
+      <img src="https://i.imgur.com/Mc6BdV0.png"  class="Logo" width="100" height="100"/></a>
+    </div>
+    <div>
+    <p> <a href="">About</a></p>
+    <p> <a href="">Advertising</a></p>
+    </div>
+    <div>
+      <p> <a href="">Privacy & Terms</a></p>
+      <p> <a href="">Careers</a></p>
+      <p> <a href="">Community Guidelines</a></p>
+    </div>
+    <div>
+      <p> <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+      <a href="">Questions</a></p>
+      <p> <i class="fa fa-cog" aria-hidden="true"></i>
+      <a href="">Manage your account and privacy</a></p>
+    </div>
+    <div class="social-media">
+      <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+      <i class="fa fa-twitter" aria-hidden="true"></i>
+      <i class="fa fa-github" aria-hidden="true"></i>
+    </div>
+  </footer>
 </body>
 </html>
