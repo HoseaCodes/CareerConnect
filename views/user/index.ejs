@@ -47,11 +47,13 @@
       <% } else {  %>
 
   <% hunters.forEach(function(hunter) { %>
+    <% if (hunter._id.equals(user && user._id)) { %>
+
   <div class="top">
     <p class="scoll">Hello, <%= hunter.name %>, welcome to Career Connect we are glad you picked us to help start your journey. Click here to <a href="/user/new"><b>start</b></a> .</p>
   </div> 
 <!-- Page Container -->
-<div class="container" style="max-width:1400px;">
+<div class="container">
 
     <!-- Profile -->
    
@@ -200,8 +202,8 @@
 </div>
 <br>
 <!-- End Page Container -->
+<% } %>
 <% }) %>
-
 
 
     
