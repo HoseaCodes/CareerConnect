@@ -7,6 +7,12 @@ const feedSchema = new mongoose.Schema({
 }, {
   timestamps: true
 });
+
+const highlightsSchema = new mongoose.Schema({
+
+},{
+timestamps: true
+});
 const hunterSchema = new mongoose.Schema({
   name: String,
   email: String,

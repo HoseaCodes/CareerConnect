@@ -38,6 +38,8 @@ li a:visited {
 li a:active {
 text-decoration: underline;
 }
+/* Header End */
+
 /* Right Column */
 
   .right {
@@ -136,6 +138,12 @@ text-decoration: underline;
     font-size: 22px;
   }
  
+  button:hover {
+    width: 210px;
+    height: 90px;
+    box-shadow:inset 0 -0.8em 0 -0.45em rgba(0,0,0,0.17);
+
+  }
 
    .container-left {
     display: flex;
@@ -146,7 +154,7 @@ text-decoration: underline;
   } 
   
   .img {
-    width: 900px;
+    /* width: 900px; */
     height: 700px;
     right: 0;
     background-color: black;
