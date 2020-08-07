@@ -41,7 +41,6 @@ li a:active {
   display: flex;
   flex-direction: column;
   align-content: center;
-  background-color: white;
 }
 
 .container {
@@ -52,7 +51,7 @@ li a:active {
 .results {
   padding: 20px 30px;
   margin: 10px;
-  background-color: white;
+  background-color: rgb(211, 211, 211);
   position: relative;
   border-radius: 6px;
 }
@@ -112,9 +111,8 @@ footer a:active {
 .first, .second, .third {
   align-self: center;
 }
-.second {
-  margin-left: 500px;
-  font-size: x-large;
+.third {
+  flex-direction: column;
 }
 .Logo2 {
   display: flex;

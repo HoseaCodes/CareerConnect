@@ -37,6 +37,12 @@ body {
   
   /* header end */
 
+  button {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    
+  }
 /* Edit Post */
 
 .container {

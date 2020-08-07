@@ -21,16 +21,14 @@ const hunterSchema = new mongoose.Schema({
   },
   location: String,
   groups: String,
-  events: {
-  eventName:String,
-  eventDate: Date,
-  },
+  events: String,
   workExp: {
    title: String,
    highlights: String,
    start: Date,
    end: Date, 
   },
+  proeject: String,
   projects: {
   title: String,
   highlights: String,
@@ -38,6 +36,7 @@ const hunterSchema = new mongoose.Schema({
   end: Date, 
 
   },
+  school: String,
   education: {
     school: String,
     highlights: String,

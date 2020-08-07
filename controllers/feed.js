@@ -40,7 +40,7 @@ function addNews(req, res) {
           newsData.push(test);
           console.log(JSON.parse(finalCall));
           console.log(newsData);
-          res.render('feed/index', { 
+          res.redirect('/feed', { 
             newsData
             });
           });

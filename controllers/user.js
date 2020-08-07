@@ -17,7 +17,7 @@ function index(req, res) {
 
 function newForm(req, res) {
     Hunter.find({}, function(err, hunters) {
-        res.render('user/userform', {
+        res.render('user/new', {
             hunters,
             user: req.user
         });
@@ -25,17 +25,24 @@ function newForm(req, res) {
 }
 
   function addUser(req, res, next) {
-      req.user.job.push(req.body);
-      req.user.phoneNo.push(req.body);
-      req.user.groups.push(req.body);
-      req.user.events.push(req.body);
-      req.user.workExp.push(req.body);
-      req.user.projects.push(req.body);
-      req.user.education.push(req.body);
-      req.user.save(function(err) {
-        res.redirect('/user');
-      });
-  }
+    Hunter.findById(req.params.id, function(err, user){
+        user.job.push(req.body);
+        user.phoneNo.push(req.body);
+        user.groups.push(req.body);
+        user.events.push(req.body);
+        user.workExp.push(req.body);
+        user.projects.push(req.body);
+        user.education.push(req.body);
+        console.log("User create is", req.body);
+        console.log(err);
+        user.save(function(err) {
+          res.redirect('/user', {
+              hunters
+          });
+        });
+    });
+ }
+
 
  
 

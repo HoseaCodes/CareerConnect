@@ -87,7 +87,31 @@ text-decoration: underline;
   }
 
   /* Left Column */
-  
+
+  /* Site Vistior Counter */
+  .countP {
+    color: white, 0.8;
+    letter-spacing: 2px;
+    margin: 0;
+    font-size: large;
+}
+#count {
+    font-size: 50px;
+    margin: 0;
+}
+
+.card {
+    color: rgb(211, 211, 211);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 10px;
+    margin: 0;
+}
+
+/* Counter End */
+
   .logo {
     display: flex;
     align-self: flex-start;

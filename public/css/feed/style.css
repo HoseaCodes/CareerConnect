@@ -2,7 +2,7 @@
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 body {
-  background-color: lightgrey;
+  background-color: white;
 }
 button a {
   text-decoration: none;
@@ -51,11 +51,35 @@ li a:active {
 /* Feed */
 
 h1 {
-  text-align: center;
-  text-shadow: -1px -1px 1px #000, 1px 1px 1px #ccc;
-  font-size: 40px;
+    display: flex;
+    font-family: Peace Sans;
+    color: #004a7c;
+    font-size: 80px;
+    text-shadow: 2px 2px grey;
+  }
+  h2 {
+    font-family: Peace Sans;
+    color: #004a7c;
+    font-size: 40px;
+    text-shadow: 2px 2px grey;
+  }
+  .feed {
+    z-index: 2;
+  }
+  .Logo2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-image: url(https://i.imgur.com/yLU696v.png);
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    opacity: 0.6;
+    
+  }
 
-}
+  .profilePic {
+    border-radius: 20%;
+  }
 
 .box  {
   padding: 10px 40px;
@@ -64,12 +88,16 @@ h1 {
   justify-content: center;  
   background-color: inherit; 
 }
-/* Left Column */
 
+/* Left Column */
 .left {
+  text-align: center;
+}
+.card {
   padding: 20px 30px;
   margin: 10px;
-  background-color: white;
+  background-color: rgb(211, 211, 211, 0.3);
+  box-shadow: 5px 5px 5px 5px #004a7c;
   border-radius: 6px;
 } 
 
@@ -78,30 +106,38 @@ h1 {
   display: flex;
   flex-direction: column;
 }
-
-.post.container {
+.middle {
+  display: flex;
+  flex-direction: column;
+}
+.post {
   display: flex;
   width: 400px;
   height: 75px;
-  order: -1000;
+  order: -1;
 } 
 
 .hunters {
   padding: 20px 30px;
   margin: 10px;
-  background-color: white;
-  position: relative;
+  background-color: rgb(211, 211, 211, 0.3);
+  box-shadow: 5px 5px 5px 5px #004a7c;
+
   border-radius: 6px;
 }
 
 /* Right Column */
 
 .right {
+  text-align: center;
+}
+/* .right {
   padding: 20px 30px;
   margin: 10px;
-  background-color: white;
+  background-color: rgb(211, 211, 211, 0.3);
+  box-shadow: 5px 5px 5px 5px #004a7c;
   border-radius: 6px;
-} 
+}  */
 
 @media screen and (max-width: 600px) {
   
@@ -160,3 +196,49 @@ footer a:active {
   justify-content: space-between;
 }
 
+/* No Login */
+
+.bgimg {
+  background-image: url('https://i.imgur.com/Ke4HEYo.jpg');
+  min-height: 800px;
+  background-position: center;
+  background-size: cover;
+}
+
+.h {
+  animation-direction: alternate;
+  animation-play-state: running;
+  position: fixed;
+  bottom: 35%;
+  right: 35%;
+}
+.button {
+  align-content: center;
+  position: fixed;
+  font-size: large;
+  width: 200px;
+  height: 50px;
+  bottom: 35%;
+  right: 43%;
+}
+a {
+  text-decoration: none;
+}
+.hr {
+  border-color: grey;
+  width: 50%;
+  position: fixed;
+  bottom: 40%;
+  right: 20%;
+}
+.logo3 {
+  padding-top: 50px;
+  padding-left: 50px;
+}
+
+
+.m {
+  display: flex;
+  align-items: center;
+  color: white;
+}

@@ -16,7 +16,8 @@
     <li><a href="/feed"><i class="fa fa-globe" aria-hidden="true"></i>Networking</a></li>
     <li><a href="/user"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
     <li><a href="/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i>Careers</a></li>
-    
+    <li><a href="/auth/google"><i class="fa fa-sign-in" aria-hidden="true"></i>Log In with Google</a></li>
+    <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
     <a href="#" title="My Account">
       <img class="headerImg" src="https://i.imgur.com/KB9fMRj.png" style="height:23px;width:23px" alt="Avatar">
     </a>
@@ -28,7 +29,11 @@
 
 <div class="Logo2">
   <a href="https://imgur.com/Mc6BdV0"><img src="https://i.imgur.com/Mc6BdV0.png" height="200" width="200" title="source: imgur.com" /></a>  
+  <% if (userData == "") { %>
   <h1 class="tech" >Welcome to Career Connect, lets get started!</h1>
+  <% } else { %>
+    <h1 class="tech" >Take a look around</h1>
+  <% } %>
 </div>
 <div class="conatiner">
 
@@ -37,21 +42,16 @@
   <div class="first">
     <h2 >Search Jobs</h2>
   </div>
-  <div class="second">
-    <h3>What</h3>
-  </div>
   <div class="third">
     <form action="/jobs" method="POST">
-      <input class="input" type="text" name="search" placeholder="Job title, or company..">
+      <input class="input" type="text" name="search" placeholder="What                Job title, or company..">
       <button class="btn" type="submit">Search</button>
     </div> 
     </form>
-    <div class="second">
-    <h3>Where</h3>
-    </div>
+
     <div class="third">
     <form action="/jobs" method="POST">
-      <input class="input" type="text" name="search" placeholder="City or remote..">
+      <input class="input" type="text" name="search" placeholder="Where                City or remote..">
       <button class="btn" type="submit">Search</button>
     </div>
     </form>

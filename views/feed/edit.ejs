@@ -31,11 +31,10 @@
     <h1> 🖊Edit Comment </h1>
             <% if (hunter._id.equals(user && user._id)) { %>
         <form action="/feed/<%= comment._id %>?_method=PUT" method="POST" autocomplete="off" >
-            <input placeholder="Edit Text Here" class="textarea" type="text" name="text" required value="<%= comment.text %>">
+          <textarea placeholder="<%= comment.text %>" class="textarea" name="text" required cols="30" rows="10"value=""></textarea>
             <button type="submit" id="edit-btn">Update Comment</button>
         </form>
         <% } %>
-        <a href="https://imgur.com/bxLx17g"><img src="https://i.imgur.com/bxLx17g.png" title="source: imgur.com" /></a>
     </div>
 
     <footer >

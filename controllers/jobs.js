@@ -17,7 +17,10 @@ function index(req, res) {
   
   function search(req, res) {
     console.log(`jobs: ${req.body.jobs}`);
-    res.render('/jobs');
+    res.render('/jobs', {
+      user: req.user
+
+    });
 };
 
  

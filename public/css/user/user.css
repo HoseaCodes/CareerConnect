@@ -44,6 +44,7 @@ ul {
   top: 0;
 }
 /* Header End */
+
 .top {
   text-align: center;
 }
@@ -69,6 +70,18 @@ ul {
 
 .midddle{
   width: 50%;
+}
+
+.scroll {
+  animation: pulse 5s infinite;
+  @keyframes pulse {
+    0% {
+      background-color: #001F3F;
+    }
+    100% {
+      background-color: #FF4136;
+    }
+  }
 }
 
 /* Footer */

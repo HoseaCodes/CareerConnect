@@ -3,7 +3,8 @@ const userCtrl = require('../controllers/user');
 
 
 router.get('/user', userCtrl.index);
-router.post('/user/userform', isLoggedIn, userCtrl.addUser);
+router.post('/user', isLoggedIn, userCtrl.addUser);
+router.get('/user/new', isLoggedIn, userCtrl.new);
 // router.delete('/user/:id', isLoggedIn, userCtrl.deleteComment);
 // router.get('/user/:id/edit', isLoggedIn, userCtrl.edit);
 // router.put('/user/:id', isLoggedIn, userCtrl.update);
