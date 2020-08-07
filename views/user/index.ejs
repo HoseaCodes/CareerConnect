@@ -31,8 +31,22 @@
       </a>
     </ul>
   </header>
+  <% if (user == null) { %>
+      <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+        <div class="Logo2">
+          <a href="https://imgur.com/Mc6BdV0"><img src="https://i.imgur.com/Mc6BdV0.png" height="200" width="200" title="source: imgur.com" /></a>  </div>
+        <div class="middle">
+          <div class="logConatiner">
+          <h1 class="h1">Please Log In </h1>
+          <hr class="hr">
+          <button class="button" type="submit"><a href="/auth/google"><i class="fa fa-sign-in" aria-hidden="true"></i>
+            Log In with Google</a></button>
+          </div>
+        </div>
+      </div>
+      <% } else {  %>
+
   <% hunters.forEach(function(hunter) { %>
-    <% if (hunter._id.equals(user && user._id)) { %>
   <div class="top">
     <p class="scoll">Hello, <%= hunter.name %>, welcome to Career Connect we are glad you picked us to help start your journey. Click here to <a href="/user/new"><b>start</b></a> .</p>
   </div> 
@@ -186,24 +200,12 @@
 </div>
 <br>
 <!-- End Page Container -->
+<% }) %>
 
 
-<% } else {  %>
-  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-    <div class="Logo2">
-      <a href="https://imgur.com/Mc6BdV0"><img src="https://i.imgur.com/Mc6BdV0.png" height="200" width="200" title="source: imgur.com" /></a>  </div>
-    <div class="middle">
-      <div class="logConatiner">
-      <h1 class="h1">Please Log In </h1>
-      <hr class="hr">
-      <button class="button" type="submit"><a href="/auth/google"><i class="fa fa-sign-in" aria-hidden="true"></i>
-        Log In with Google</a></button>
-      </div>
-    </div>
-  </div>
+
     
 <% } %>
-<% }) %>
 <!-- Footer -->
 
 <footer >

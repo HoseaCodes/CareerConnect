@@ -38,12 +38,11 @@
           
           <!-- Button Two -->
           <form action="/auth/google">
-            <button>
-              <% if (user) { %>
-                <a href="/logout">Log Out</a>
+           
+              <% if (user == null) { %>
+                <button> <a href="/auth/google">Register Now</a></button>
               <% } else { %>
-                <a href="/auth/google">
-                  Register Now</button></a>
+                <button>  <a href="/logout">Log Out</a> </button>
                   <% } %>
           </form>
 

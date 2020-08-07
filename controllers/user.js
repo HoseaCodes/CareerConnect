@@ -10,7 +10,7 @@ function index(req, res) {
     Hunter.find({}, function(err, hunters) {
         res.render('user/index', {
             hunters,
-            user: req.user
+            user: req.user, 
         });
     });
 }
