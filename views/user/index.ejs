@@ -1,36 +1,11 @@
-<!DOCTYPE html>
-<html>
-<title>Career Connect</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Google Font -->
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<%- include('../partials/header') %>
 <!-- Secondary Link -->
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<!-- Personal stylesheet -->
+<!-- User stylesheet -->
 <link rel="stylesheet" href="/css/user/user.css">
 <!-- icons -->
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-<body>
-  <!-- header -->
-  <header>
-    <ul>
-      <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
-      <li><a href="/feed"><i class="fa fa-globe" aria-hidden="true"></i>Networking</a></li>
-      <li><a href="/user"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
-      <li><a href="/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i>Careers</a></li>
-      <% if (user) { %>
-        <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
-          Log Out</a></li>
-        <% } else { %>
-        <li><a href="/auth/google"><i class="fa fa-sign-in" aria-hidden="true"></i>
-          Log In with Google</a></li>
-          <% } %>
-      <a href="#" title="My Account">
-        <img class="headerImg" src="https://i.imgur.com/KB9fMRj.png" style="height:23px;width:23px" alt="Avatar">
-      </a>
-    </ul>
-  </header>
+
   <% if (user == null) { %>
       <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
         <div class="Logo2">
@@ -203,39 +178,6 @@
 <br>
 <!-- End Page Container -->
 <% } %>
-<% }) %>
-
-
-    
+<% }) %>    
 <% } %>
-<!-- Footer -->
-
-<footer >
-  <div>
-    <a href="https://imgur.com/Mc6BdV0">
-    <img src="https://i.imgur.com/Mc6BdV0.png"  class="Logo" width="100" height="100"/></a>
-  </div>
-  <div>
-    <p> <a href="">About</a></p>
-    <p> <a href="">Advertising</a></p>
-  </div>
-  <div>
-    <p> <a href="">Privacy & Terms</a></p>
-    <p> <a href="">Careers</a></p>
-    <p> <a href="">Community Guidelines</a></p>
-  </div>
-  <div>
-    <p> <i class="fa fa-question-circle-o" aria-hidden="true"></i>
-      <a href="">Questions</a></p>
-    <p> <i class="fa fa-cog" aria-hidden="true"></i>
-      <a href="">Manage your account and privacy</a></p>
-  </div>
-  <div class="social-media">
-    <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-    <i class="fa fa-twitter" aria-hidden="true"></i>
-    <i class="fa fa-github" aria-hidden="true"></i>
-  </div>
-</footer>
-
-</body>
-</html>
+<%- include('../partials/footer') %>
