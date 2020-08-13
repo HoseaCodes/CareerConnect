@@ -1,3 +1,4 @@
+/* eslint-disable prefer-arrow-callback */
 const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
@@ -24,6 +25,7 @@ app.use(methodOverride('_method'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// eslint-disable-next-line spaced-comment
 //may need to delete
 // app.use(function(req, res) {
 //   req.time = new Date().toLocaleTimeString()
@@ -39,12 +41,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 app.use('/', indexRouter);
 app.use('/', jobsRouter);
 app.use('/', feedRouter);
 app.use('/', userRouter);
-
 
 const port = process.env.PORT || 3000;
 
