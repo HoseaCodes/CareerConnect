@@ -8,7 +8,7 @@ router.post('/feed', isLoggedIn, feedCtrl.addComment);
 router.delete('/feed/:id', isLoggedIn, feedCtrl.deleteComment);
 router.get('/feed/:id/edit', isLoggedIn, feedCtrl.edit);
 router.put('/feed/:id', isLoggedIn, feedCtrl.update);
-router.post('/feed', feedCtrl.addNews);
+// router.post('/feed', feedCtrl.addNews);
 
 
 // router.post('/feed', feedCtrl.create);

@@ -51,10 +51,23 @@ ul {
     background-color: rgb(211, 211, 211);
     border: 10px double black;
     padding: 10px;
+    padding-top: 0;
   }
 
   /* Input End */
+.title {
+  display: flex;
+  color: #004a7c;
+  justify-items: center;
+}
 
+.joint-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(220, 220, 220);
+  margin: 0;
+}
 
 /* Footer */
 footer {

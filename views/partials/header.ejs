@@ -7,6 +7,8 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <!-- icons -->
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel='icon' type='image/gif/png' href='https://i.imgur.com/Mc6BdV0.png'>
+
 <body>
   <!-- header -->
   <header>
@@ -16,12 +18,12 @@
       <li><a href="/user"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
       <li><a href="/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i>Careers</a></li>
       <% if (user) { %>
-        <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
+      <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
           Log Out</a></li>
-        <% } else { %>
-        <li><a href="/auth/google"><i class="fa fa-sign-in" aria-hidden="true"></i>
+      <% } else { %>
+      <li><a href="/auth/google"><i class="fa fa-sign-in" aria-hidden="true"></i>
           Log In with Google</a></li>
-          <% } %>
+      <% } %>
       <a href="#" title="My Account">
         <img class="headerImg" src="https://i.imgur.com/KB9fMRj.png" style="height:23px;width:23px" alt="Avatar">
       </a>

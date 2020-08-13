@@ -14,43 +14,37 @@ const highlightsSchema = new mongoose.Schema({
 timestamps: true
 });
 const hunterSchema = new mongoose.Schema({
-  name: String,
+  name: {
+    String,
+  },
   email: String,
   avatar: String,
   comments: [feedSchema],
   googleId: String,
-  job: String,
   phoneNo: {
   type: Number,
   min: 5,
   max: 10,
   },
-  location: String,
-  groups: String,
-  events: String,
+  location: [String],
+  groups: [String],
+  events: [String],
   workExp: {
-   title: String,
-   highlights: String,
-   start: Date,
-   end: Date, 
+   title: [String],
+   highlight: [String],
+   wDate: Date 
   },
-  proeject: String,
-  projects: {
-  title: String,
-  highlights: String,
-  start: Date,
-  end: Date, 
-
-  },
-  school: String,
+  project: {
+    title: [String],
+    highlight: [String],
+  }, 
   education: {
-    school: String,
-    highlights: String,
-    start: Date,
-    end: Date, 
+    school: [String],
+    highlight: [String],
+    eDate: Date 
   },
 }, {
-  timestamps: true
+  timestamp: true
 });
 
 module.exports = mongoose.model('Hunter', hunterSchema);

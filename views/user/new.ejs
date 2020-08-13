@@ -11,41 +11,54 @@
 <div class="container">
 <!-- User Form -->
 
-  <form action="/user/<%user._id%>" method="POST">
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="inputEmail4">Email</label>
-        <input name="email" type="email" class="form-control" id="inputEmail4">
-      </div>
+  <form action="/user" name="addUser" method="POST">
+    <div class="joint-title">
+      <img src="https://i.imgur.com/Mc6BdV0.png" alt="Logo" class="Logo" width="100" height="100"/>
+      <h1 class="title">User Profile</h1>
+      <img src="https://i.imgur.com/Mc6BdV0.png" alt="Logo" class="Logo" width="100" height="100"/>
     </div>
+    <hr>
       <div class="form-row">
-      <div class="form-group col-md-6">
-        <label>Phone Number</label>
-        <input name="phoneNo" type="number" class="form-control">
-      </div>
-      </div>
+        <div class="form-group col-md-6">
+          <label>Phone Number</label>
+          <input name="phoneNo" type="number" class="form-control">
+        </div>
+        </div>
     <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputAddress">Location</label>
-      <input name="location" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <div class="form-group col-md-3">
+      <label for="inputAddress">City</label>
+      <input name="location" type="text" class="form-control" id="inputAddress" placeholder="Houston">
+      <label for="inputAddress">State</label>
+      <input name="location" type="text" class="form-control" id="inputAddress" placeholder="TX">
     </div>
     </div>
     <div class="form-row">
     <div class="form-group col-md-6">
-      <label> Career</label>
-      <input name="job" type="text" class="form-control" placeholder="Current or Past Title">
+      <label>Career</label>
+      <label>Position </label>
+      <input name="workExp" type="text" class="form-control" placeholder="Current or Past Title">
+      <label> Description</label>
+      <textarea name="workExp" class="form-control" cols="30" rows="10" placeholder="What did you do?"></textarea>
+      <label>End Date </label>
+      <input name="workExp" type="date" class="form-control" placeholder="When did you start">
     </div>
     </div>
     <div class="form-row">
     <div class="form-group col-md-6">
       <label> Education</label>
-      <input name="school" type="text" class="form-control" placeholder="Bootcamp, Self-taught or Formal">
+      <input name="education" type="text" class="form-control" placeholder="Bootcamp, Self-taught or Formal">
+      <label> Highlights</label>
+      <textarea name="education" class="form-control" cols="30" rows="10" placeholder="What did you do?"></textarea>
+      <label> End Date</label>
+      <input name="education" type="date" class="form-control" placeholder="When did you ">
     </div>
     </div>
     <div class="form-row">
     <div class="form-group col-md-6">
       <label> Project</label>
       <input name="project" type="text" class="form-control" placeholder="Current or Past Project">
+      <label> Details</label>
+      <textarea name="project" class="form-control" cols="30" rows="10" placeholder="What did you do?"></textarea>
     </div>
     </div>
     <div class="form-row">

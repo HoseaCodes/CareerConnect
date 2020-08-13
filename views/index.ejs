@@ -1,98 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Career Connect</title>
-    <!-- Custom CSS Styling -->
-    <link rel="stylesheet" href="/css/landing.css" />
-    <!-- Online Web Fonts for Peace Sans -->
-    <link href="//db.onlinewebfonts.com/c/2a32094b74bdd4607c616294a8a90740?family=Peace+Sans" rel="stylesheet" type="text/css"/>
-    <!-- Page Counter -->
-    <script defer src="/js/count.js"></script>
-</head>
-<body>
 
-    <div class="container">
-        <div class="container-left">
-         
-          <!-- Logo without background -->
-          <a href="https://imgur.com/Mc6BdV0">
-          <img src="https://i.imgur.com/Mc6BdV0.png"  class="Logo" width="300" height="300"/></a>
-          <!-- Logo with white background -->
-          <!-- <a href="https://imgur.com/9Jkp6sj">
-          <img src="https://i.imgur.com/9Jkp6sj.png" class="Logo" width="300" height="300" /></a> -->
-          
-          <!-- header -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Career Connect</title>
+  <!-- Custom CSS Styling -->
+  <link rel="stylesheet" href="/css/landing.css" />
+  <!-- Online Web Fonts for Peace Sans -->
+  <link href="//db.onlinewebfonts.com/c/2a32094b74bdd4607c616294a8a90740?family=Peace+Sans" rel="stylesheet"
+    type="text/css" />
+  <!-- Page Counter -->
+  <script defer src="/js/count.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-left">
+      <a href="#">
+        <img src="https://i.imgur.com/Mc6BdV0.png" alt="Logo" class="Logo" width="300" height="300" /></a>
+      <!-- Header End -->
       <header>
         <div class="header">
-        <ul>
-          <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
-          <li><a href="/user"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
-          <li><a href="/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i>Careers</a></li>
-          <li><a href="/feed"><i class="fa fa-globe" aria-hidden="true"></i>Networking</a></li>
-        </ul>
+          <ul>
+            <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i>Home</a></li>
+            <li><a href="/user"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+            <li><a href="/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i>Careers</a></li>
+            <li><a href="/feed"><i class="fa fa-globe" aria-hidden="true"></i>Networking</a></li>
+          </ul>
         </div>
       </header>
-          
-          
-          <!-- Button Two -->
-          <form action="/auth/google">
-           
-              <% if (user == null) { %>
-                <button> <a href="/auth/google">Register Now</a></button>
-              <% } else { %>
-                <button>  <a href="/logout">Log Out</a> </button>
-                  <% } %>
-          </form>
-
-          <p class="countP" >Welcome, you are the</p>
-          <h6 id="count" class="card">0</h6>
-          <p class="countP" >Visitor</p>
-            
-
-        </div>
-        <div class="right">
-          <div class="container-right">
-                  <h2 class="text1">Career Connect</h2>
-                  <h3 class="text2">Connecting all the dots.</h3>
-                  <a href="https://imgur.com/hHCI2wa">
-                  <img src="https://i.imgur.com/hHCI2wa.jpg" alt="Career Connection" class="img"/></a>
-          </div>
-          <div class="bottom-right-container">
-            <h2 class="about">ABOUT US</h2>
-            <h3>Indepdence</h3>
-            <p class="content">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu massa urna. 
-              In hac habitasse platea dictumst. Nunc consequat laoreet lorem non bibendum. 
-              Nulla interdum sagittis turpis, nec pulvinar dui commodo non. 
-              Cras libero justo, lacinia vel aliquam sagittis, molestie quis elit. 
-              Mauris id leo rutrum massa cursus interdum. Integer et lacus at nisi pretium dignissim nec in sapien. 
-              Pellentesque ut bibendum libero, non imperdiet nisl. Etiam commodo consectetur felis semper lobortis. 
-              Phasellus ornare massa sapien, a congue arcu scelerisque maximus. Aliquam sit amet nunc elit.
-              Nullam vehicula euismod nisi, quis fringilla felis fermentum a. 
-            </p>
-            <h3>Leap of Faith</h3>
-            <p class="content">
-              Maecenas tincidunt dolor et scelerisque dapibus. Integer magna mauris, viverra sit amet mattis pharetra, cursus vitae erat. 
-              Nulla ullamcorper ligula lectus, id porttitor velit fringilla sed. 
-              Donec faucibus dui magna, vitae varius dui elementum id. Nam ut mauris eleifend, lobortis eros vitae, mattis nisl. 
-              Proin pretium, leo ut iaculis suscipit, justo risus condimentum nibh, id fermentum elit neque nec felis. 
-              Donec fermentum elit id sem aliquam tempus eget vel odio. Maecenas non eleifend odio. In vel consectetur nibh, quis pulvinar arcu. 
-              Sed eget purus arcu.
-            </p>
-            <h3>Fulfillment</h3>
-            <p class="content"> 
-              Vivamus consectetur nibh sit amet tristique fermentum. Suspendisse dapibus venenatis mattis. 
-              Phasellus laoreet risus diam, eget fringilla neque gravida et. Nunc euismod feugiat porttitor. 
-              Fusce convallis varius consectetur. Curabitur vitae mattis nisl. Quisque non dui eu mi condimentum gravida et vel enim. 
-              Suspendisse pretium neque in arcu pulvinar, tristique dictum turpis luctus. 
-              Donec euismod nunc elementum lectus hendrerit, et pharetra nulla ultricies. Donec eget venenatis lacus, sit amet bibendum velit. 
-              Nulla velit massa, luctus non urna a, bibendum porttitor neque.
-            </p>
-          </div>
-        </div>
-      </div> 
-     
+      <!-- Header End -->
+      <!-- Dynamic Register Button Two -->
+      <!-- Left Column  -->
+      <form action="/auth/google">
+        <% if (user == null) { %>
+        <button> <a href="/auth/google">Register Now</a></button>
+        <% } else { %>
+        <button> <a href="/logout">Log Out</a> </button>
+        <% } %>
+      </form>
+      <p class="countP">Welcome, you are the</p>
+      <h6 id="count" class="card">0</h6>
+      <p class="countP">Visitor</p>
+    </div>
+    <!-- Left Column End -->
+    <!-- Right Column -->
+    <!-- Top Column -->
+    <div class="right">
+      <div class="container-right">
+        <h2 class="text1">Career Connect</h2>
+        <h3 class="text2">Connecting all the dots.</h3>
+        <a href="#">
+          <img src="https://i.imgur.com/hHCI2wa.jpg" alt="Career Connection" class="img" /></a>
+      </div>
+      <!-- Top Column End -->
+      <!-- Bottom Right Column -->
+      <div class="bottom-right-container">
+        <h2 class="about">ABOUT US</h2>
+        <h3>Indepdence</h3>
+        <p class="content">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu massa urna.
+          In hac habitasse platea dictumst. Nunc consequat laoreet lorem non bibendum.
+          Nulla interdum sagittis turpis, nec pulvinar dui commodo non.
+          Cras libero justo, lacinia vel aliquam sagittis, molestie quis elit.
+          Mauris id leo rutrum massa cursus interdum. Integer et lacus at nisi pretium dignissim nec in sapien.
+          Pellentesque ut bibendum libero, non imperdiet nisl. Etiam commodo consectetur felis semper lobortis.
+          Phasellus ornare massa sapien, a congue arcu scelerisque maximus. Aliquam sit amet nunc elit.
+          Nullam vehicula euismod nisi, quis fringilla felis fermentum a.
+        </p>
+        <h3>Leap of Faith</h3>
+        <p class="content">
+          Maecenas tincidunt dolor et scelerisque dapibus. Integer magna mauris, viverra sit amet mattis pharetra,
+          cursus vitae erat.
+          Nulla ullamcorper ligula lectus, id porttitor velit fringilla sed.
+          Donec faucibus dui magna, vitae varius dui elementum id. Nam ut mauris eleifend, lobortis eros vitae, mattis
+          nisl.
+          Proin pretium, leo ut iaculis suscipit, justo risus condimentum nibh, id fermentum elit neque nec felis.
+          Donec fermentum elit id sem aliquam tempus eget vel odio. Maecenas non eleifend odio. In vel consectetur nibh,
+          quis pulvinar arcu.
+          Sed eget purus arcu.
+        </p>
+        <h3>Fulfillment</h3>
+        <p class="content">
+          Vivamus consectetur nibh sit amet tristique fermentum. Suspendisse dapibus venenatis mattis.
+          Phasellus laoreet risus diam, eget fringilla neque gravida et. Nunc euismod feugiat porttitor.
+          Fusce convallis varius consectetur. Curabitur vitae mattis nisl. Quisque non dui eu mi condimentum gravida et
+          vel enim.
+          Suspendisse pretium neque in arcu pulvinar, tristique dictum turpis luctus.
+          Donec euismod nunc elementum lectus hendrerit, et pharetra nulla ultricies. Donec eget venenatis lacus, sit
+          amet bibendum velit.
+          Nulla velit massa, luctus non urna a, bibendum porttitor neque.
+        </p>
+      </div>
+      <!-- Bottom Column End -->
+    </div>
+    <!-- Right Column End -->
+  </div>
+  <!-- Container End -->
 </body>
+
 </html>

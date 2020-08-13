@@ -31,23 +31,23 @@ app.use(express.urlencoded({ extended: true }));
 // });
 
 app.use(session({
-    secret: "SEIROCKS!",
-    resave: false, 
-    saveUninitialized: true
-  }));
+  secret: 'SEIROCKS!',
+  resave: false,
+  saveUninitialized: true,
+}));
 
 app.use(passport.initialize());
 app.use(passport.session());
-  
+
 
 app.use('/', indexRouter);
-app.use ('/', jobsRouter);
-app.use ('/', feedRouter);
-app.use ('/', userRouter);
+app.use('/', jobsRouter);
+app.use('/', feedRouter);
+app.use('/', userRouter);
 
 
 const port = process.env.PORT || 3000;
 
 app.listen(port, function () {
-    console.log(`Listening on port Andre: ${port}`);
+  console.log(`Listening on port Andre: ${port}`);
 });

@@ -69,8 +69,16 @@ function addNews(req, res) {
 
 function edit(req, res) {
   Hunter.findById(req.user._id, function(err, hunter) {
+    console.log('req.user', req.user);
+    console.log('Career title', req.user.workExp.title);
+    console.log('Career highlight', req.user.workExp.highlight);
+    console.log('Career wDate', req.user.workExp.wDate);
+    console.log('req.user._id', req.user._id);
+    console.log('req.params', req.params);
+    console.log("req.parmas.id:", req.params.id);
+    console.log("req.body", req.body);
     const comment = hunter.comments.id(req.params.id);
-    console.log(comment);
+    console.log('find me',comment);
     res.render('feed/edit', {
       hunter, 
       user: req.user, 
