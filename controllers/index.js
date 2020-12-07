@@ -5,7 +5,8 @@ module.exports = {
 }
 
 function index(req, res) {
-    Hunter.find({}, function(err, hunters) {
+    Hunter.find({}, function (err, hunters) {
+        if (err) return res.render('index')
         res.render('index', {
             hunters,
             user: req.user

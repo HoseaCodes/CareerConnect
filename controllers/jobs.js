@@ -6,23 +6,23 @@ module.exports = {
 };
 
 function index(req, res) {
-    Hunter.find({}, function(err, hunters) {
-      res.render('jobs/index',  { 
-        hunters,
-        user: req.user,
-        userData: "",  
-      });
+  Hunter.find({}, function (err, hunters) {
+    if (err) return res.render('jobs/index')
+    res.render('jobs/index', {
+      hunters,
+      user: req.user,
+      userData: "",
     });
-  }
-  
-  function search(req, res) {
-    console.log(`jobs: ${req.body.jobs}`);
-    res.render('/jobs', {
-      user: req.user
+  });
+}
 
-    });
+function search(req, res) {
+  console.log(`jobs: ${req.body.jobs}`);
+  res.render('/jobs', {
+    user: req.user
+
+  });
 };
 
- 
-  
-  
+
+
