@@ -57,7 +57,7 @@ function addNews(req, res) {
 function addComment(req, res, next) {
   req.user.comments.push(req.body);
   req.user.save(function (err) {
-    if (err) return res.render('/feed')
+    if (err) return console.log(err)
     res.redirect('/feed');
   });
 }

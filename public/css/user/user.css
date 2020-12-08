@@ -58,7 +58,7 @@ ul {
 .container {
   display: flex;
   flex-direction: row;
-
+  margin: 0 auto;
 }
 
 /* Left, Right, & Middle Container */
@@ -71,6 +71,9 @@ ul {
   border-radius: 6px;
 }
 
+.profile-img{
+  width: 400px;
+}
 .midddle{
   width: 50%;
 }
