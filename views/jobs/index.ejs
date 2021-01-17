@@ -20,6 +20,7 @@
     <ul>
       <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
       <li><a href="/feed"><i class="fa fa-globe" aria-hidden="true"></i> Networking</a></li>
+      <li><a href="/assessments"><i class="fa fa-globe" aria-hidden="true"></i> Assessments</a></li>
       <li><a href="/user"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
       <li><a href="/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> Careers</a></li>
     </ul>
@@ -29,73 +30,82 @@
   <div class="Logo2">
     <a href="https://imgur.com/Mc6BdV0"><img src="https://i.imgur.com/Mc6BdV0.png" height="200" width="200"
         title="source: imgur.com" /></a>
-    <% if (userData == "") { %>
-    <h1 class="tech">Welcome to Career Connect, lets get started!</h1>
-    <% } else { %>
-    <h1 class="tech">Take a look around</h1>
-    <% } %>
+    <% if (userData=="" ) { %>
+      <h1 class="tech">Welcome to Career Connect, lets get started!</h1>
+      <% } else { %>
+        <h1 class="tech">Take a look around</h1>
+        <% } %>
   </div>
   <div class="conatiner">
 
-    <% if (userData == "") { %>
-    <div class="top">
-      <div class="first">
-        <h2>Search Jobs</h2>
-      </div>
-      <div class="third">
-        <form action="/jobs" method="POST">
-          <input class="input" type="text" name="search" placeholder="What                Job title, or company..">
-          <button class="btn" type="submit">Search</button>
-      </div>
-      </form>
+    <% if (userData=="" ) { %>
+      <div class="top">
+        <div class="first">
+          <h2>Search Jobs</h2>
+        </div>
+        <div class="third">
+          <form action="/jobs" method="POST">
+            <input class="input" type="text" name="search" placeholder="What                Job title, or company..">
+            <button class="btn" type="submit">Search</button>
+        </div>
+        </form>
 
-      <div class="third">
-        <form action="/jobs" method="POST">
-          <input class="input" type="text" name="search" placeholder="Where                City or remote..">
-          <button class="btn" type="submit">Search</button>
-      </div>
-      </form>
-      <br>
-    </div>
-
-    <div>
-      <div class="changer">
-        <div id="overlay"></div>
-        <video id="introVideo" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-          <source src="https://i.imgur.com/SWV63rV.mp4'" type="video/mp4">
-        </video>
-      </div>
-    </div>
-    <% } %>
-
-    <div class="middle">
-      <hr>
-      <% if (userData) { %>
-      <% userData.forEach(function(job) { %>
-      <div class="results">
-        <h2><%= job.title %></h2>
-        <img src="<%= job.company_logo %>" class="img-circle" width="80">
-        <h3><%= job.type %></h3>
-        <h3><%= job.location %></h3>
-        <h4>Date: <%= job.created_at %></h4>
-        <h4>Job Description:</h4>
-
-        <h4><%- job.description %></h4>
-        <a href="<%= job.url %>" target="_blank" class="list-group-item">Company Website: <%=job.company%>
-        </a>
+        <div class="third">
+          <form action="/jobs" method="POST">
+            <input class="input" type="text" name="search" placeholder="Where                City or remote..">
+            <button class="btn" type="submit">Search</button>
+        </div>
+        </form>
         <br>
-
       </div>
 
-      <% })%>
-
-      <% }%>
-      <%if (userData == null) { %>
-
-      <h1>
-        Attetmpt New Search
-      </h1>
+      <div>
+        <div class="changer">
+          <div id="overlay"></div>
+          <video id="introVideo" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+            <source src="https://i.imgur.com/SWV63rV.mp4'" type="video/mp4">
+          </video>
+        </div>
+      </div>
       <% } %>
-    </div>
+
+        <div class="middle">
+          <hr>
+          <% if (userData) { %>
+            <% userData.forEach(function(job) { %>
+              <div class="results">
+                <h2>
+                  <%= job.title %>
+                </h2>
+                <img src="<%= job.company_logo %>" class="img-circle" width="80">
+                <h3>
+                  <%= job.type %>
+                </h3>
+                <h3>
+                  <%= job.location %>
+                </h3>
+                <h4>Date: <%= job.created_at %>
+                </h4>
+                <h4>Job Description:</h4>
+
+                <h4>
+                  <%- job.description %>
+                </h4>
+                <a href="<%= job.url %>" target="_blank" class="list-group-item">Company Website: <%=job.company%>
+                </a>
+                <br>
+
+              </div>
+
+              <% })%>
+
+                <% }%>
+                  <%if (userData==null) { %>
+
+                    <h1>
+                      Attetmpt New Search
+                    </h1>
+                    <% } %>
+        </div>
   </div>
   <%- include('../partials/footer') %>

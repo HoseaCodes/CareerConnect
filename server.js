@@ -16,6 +16,7 @@ const indexRouter = require('./routes/index');
 const jobsRouter = require('./routes/jobs');
 const feedRouter = require('./routes/feed');
 const userRouter = require('./routes/user');
+const assessmentsRouter = require('./routes/assessments');
 
 app.set('view engine', 'ejs');
 
@@ -45,6 +46,7 @@ app.use('/', indexRouter);
 app.use('/', jobsRouter);
 app.use('/', feedRouter);
 app.use('/', userRouter);
+app.use('/', assessmentsRouter);
 
 const port = process.env.PORT || 3000;
 
