@@ -2,6 +2,7 @@ const Hunter = require('../models/hunter');
 
 module.exports = {
     index,
+    addAssessment
 }
 
 function index(req, res) {
@@ -13,5 +14,14 @@ function index(req, res) {
             userData: "",
         });
         console.log(err)
+    });
+}
+
+
+function addAssessment(req, res, next) {
+    req.user.assessments.push(req.body);
+    req.user.save(function (err) {
+        if (err) return console.log(err)
+        res.redirect('/assessments');
     });
 }
