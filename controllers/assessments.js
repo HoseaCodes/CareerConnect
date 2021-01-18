@@ -2,7 +2,9 @@ const Hunter = require('../models/hunter');
 
 module.exports = {
     index,
-    addAssessment
+    addAssessment,
+    deleteAssessment,
+
 }
 
 function index(req, res) {
@@ -22,6 +24,14 @@ function addAssessment(req, res, next) {
     req.user.assessments.push(req.body);
     req.user.save(function (err) {
         if (err) return console.log(err)
+        res.redirect('/assessments');
+    });
+}
+
+function deleteAssessment(req, res) {
+    req.user.assessments.splice(req.params.id, 1);
+    req.user.save(function (err) {
+        if (err) return res.render('/assessments')
         res.redirect('/assessments');
     });
 }
