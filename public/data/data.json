@@ -1,0 +1,36 @@
+{
+    "Python": [
+        {
+            "question": "What type of language is python? Programming or scripting?",
+            "answer": "Python is capable of scripting, but in general sense, it is considered as a general-purpose programming language."
+        },
+        {
+            "question": "How is Python an interpreted language?",
+            "answer": "An interpreted language is any programming language which is not in machine level code before runtime. Therefore, Python is an interpreted language."
+        },
+        {
+            "question": "What is pep 8?",
+            "answer": "PEP stands for Python Enhancement Proposal. It is a set of rules that specify how to format Python code for maximum readability."
+        },
+        {
+            "question": "What is PYTHONPATH?",
+            "answer": "It is an environment variable which is used when a module is imported. Whenever a module is imported, PYTHONPATH is also looked up to check for the presence of the imported modules in various directories. The interpreter uses it to determine which module to load."
+        },
+        {
+            "question": "What is the difference between Python Arrays and lists?",
+            "answer": " Arrays and lists, in Python, have the same way of storing data. But, arrays can hold only a single data type elements whereas lists can hold any data type elements."
+        },
+        {
+            "question": "What is __init__?",
+            "answer": "__init__ is a method or constructor in Python. This method is automatically called to allocate memory when a new object/ instance of a class is created. All classes have the __init__ method."
+        },
+        {
+            "question": "What is a lambda function?",
+            "answer": "An anonymous function is known as a lambda function. This function can have any number of parameters but, can have just one statement."
+        },
+        {
+            "question": "What is self in Python?",
+            "answer": "Self is an instance or an object of a class. In Python, this is explicitly included as the first parameter. However, this is not the case in Java where it’s optional.  It helps to differentiate between the methods and attributes of a class with local variables. The self variable in the init method refers to the newly created object while in other methods, it refers to the object whose method was called."
+        }
+    ]
+}
