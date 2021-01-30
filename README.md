@@ -1,20 +1,30 @@
-# Career Connect
+# [Career Connect](www.career-connect.io)
 
-A web app for gathering and displaying new profiles.
+![CareerConnect](https://i.imgur.com/Mc6BdV0.png)
 
-## Screenshots
-____________________
+New devs have an difficult time making a transition into the world of Tech. Career Connect helps new devs find a single place for development resources, networking and searching for jobs. On the home page, you will see an area to register and search for careers. The other options profile and networking are locked until you register.  
 
-Career Connect
+## Created by: Dominique Hosea
 
-Data Structre
+### August 2020
 
-[GitHub Jobs API](https://i.imgur.com/sdP1PLa.png)
+## Data Structre
 
-[News API](https://i.imgur.com/zqzrJq0.png)
+### Github Jobs API
+![GitHub Jobs API](https://i.imgur.com/sdP1PLa.png)
+![GitHub Jobs API](https://i.imgur.com/c5E9ji0.png)
 
-[News API 2](https://i.imgur.com/l0U8U43.png)List Data Example:
+### MVC 
+#### Model
+![Model](https://i.imgur.com/yDCcCE3.png)
+#### View (Conditional Rendering)
+![View](https://i.imgur.com/4ibvheK.png)
+#### Controller
+![Controller](https://i.imgur.com/nLsl9UN.png)
 
+### User Login
+#### Passport
+![Passport](https://i.imgur.com/HluIAmx.png)
 
 ## Wire Frame
 ______________________________________________________________________________________
@@ -51,17 +61,20 @@ AAU (As u User)
 ![Screen Shot 2020-08-07 at 9.30.13 AM](https://i.imgur.com/mOAzsyj.png)
 ![Screen Shot 2020-08-07 at 9.30.39 AM](https://i.imgur.com/DHseUjv.png)
 
-## Technologies
-____________________
+## Technologies Used
 
-- HTML
-- CSS
-- Materialize
-- JavaScript
-- jQuery
-- Nodejs
-- MongoDB
-- Express
+M - MongoDB, a storage database
+E - Express, a back-end framework  
+N - NodeJS - to run back end service
+
+Dependencies used:
+
+- Morgan - HTTP request logger middleware for node.js
+- Fetch - Promise based HTTP client for the browser and node.js
+- Passport - authenticate requests through an extensible set of plugins
+- Mongoose - for MongoDB validation
+- Materialize - a library for building pre-styled components
+- jQuery - a fast, small, and feature-rich JavaScript library 
 
 ## Getting Started
 ____________________
