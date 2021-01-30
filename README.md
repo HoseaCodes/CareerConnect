@@ -59,7 +59,7 @@ AAU (As u User)
 ![Screen Shot 2020-08-07 at 9.29.20 AM](https://i.imgur.com/MjRtxI4.png)
 ![Screen Shot 2020-08-07 at 9.29.40 AM](https://i.imgur.com/tiLfjyx.png)
 ![Screen Shot 2020-08-07 at 9.30.13 AM](https://i.imgur.com/mOAzsyj.png)
-![Screen Shot 2020-08-07 at 9.30.39 AM](https://i.imgur.com/DHseUjv.png)
+![Screen Shot 2020-08-07 at 9.30.39 AM](https://i.imgur.com/YZNVx7T.png)
 
 ## Technologies Used
 
