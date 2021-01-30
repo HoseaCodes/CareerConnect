@@ -54,7 +54,7 @@ AAU (As u User)
 
 "As a User, I want to be able to edit a pervious post."
 
-![Screen Shot 2020-08-07 at 9.28.36 AM](https://i.imgur.com/8OZdbHH.png)
+![Screen Shot 2020-08-07 at 9.28.36 AM](https://i.imgur.com/XNYM9Fs.png)
 ![Screen Shot 2020-08-07 at 9.28.52 AM](https://i.imgur.com/ERvub29.png)
 ![Screen Shot 2020-08-07 at 9.29.20 AM](https://i.imgur.com/MjRtxI4.png)
 ![Screen Shot 2020-08-07 at 9.29.40 AM](https://i.imgur.com/tiLfjyx.png)
