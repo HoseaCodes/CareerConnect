@@ -17,13 +17,15 @@
 <body>
   <!-- header -->
   <header>
-    <ul>
-      <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-      <li><a href="/feed"><i class="fa fa-globe" aria-hidden="true"></i> Networking</a></li>
-      <li><a href="/assessments"><i class="fa fa-globe" aria-hidden="true"></i> Assessments</a></li>
-      <li><a href="/user"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
-      <li><a href="/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> Careers</a></li>
-    </ul>
+    <nav>
+      <ul>
+        <li><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+        <li><a href="/feed"><i class="fa fa-globe" aria-hidden="true"></i> Networking</a></li>
+        <li><a href="/assessments"><i class="fa fa-globe" aria-hidden="true"></i> Assessments</a></li>
+        <li><a href="/user"><i class="fa fa-user" aria-hidden="true"></i> Profile</a></li>
+        <li><a href="/jobs"><i class="fa fa-briefcase" aria-hidden="true"></i> Careers</a></li>
+      </ul>
+    </nav>
   </header>
   <link rel="stylesheet" href="/css/jobs.css">
 
@@ -70,31 +72,46 @@
       <% } %>
 
         <div class="middle">
-          <hr>
           <% if (userData) { %>
             <% userData.forEach(function(job) { %>
               <div class="results">
-                <h2>
-                  <%= job.title %>
-                </h2>
-                <img src="<%= job.company_logo %>" class="img-circle" width="80">
-                <h3>
-                  <%= job.type %>
-                </h3>
-                <h3>
-                  <%= job.location %>
-                </h3>
-                <h4>Date: <%= job.created_at %>
-                </h4>
-                <h4>Job Description:</h4>
+                <div class="title-group">
+                  <% if (job.company_logo==null ) { %>
+                    <img src="https://i.imgur.com/i8HErCE.png" class="img-circle" width="80">
+                    <% } else { %>
+                      <img src="<%= job.company_logo %>" class="img-circle" width="80">
+                      <% } %>
+                        <div class="title-group-info">
+                          <h2 class="company-title">
+                            <%= job.title %> -
+                              <span>
+                                <%= job.type %>
+                              </span>
+                          </h2>
+                          <h2 class="company-title">
+                            <%= job.company %>
+                          </h2>
+                          <h2>
+                            <%= job.location %>
+                          </h2>
+                          <h4>
+                            Posted: <%= job.created_at %>
+                          </h4>
+                        </div>
 
-                <h4>
-                  <%- job.description %>
-                </h4>
-                <a href="<%= job.url %>" target="_blank" class="list-group-item">Company Website: <%=job.company%>
-                </a>
-                <br>
-
+                </div>
+                <div class="company-info-group">
+                  <h3 class="company-subtitle">Job Description</h4>
+                    <p class="company-description">
+                      <%- job.description %>
+                    </p>
+                </div>
+                <div>
+                  <h3 class="company-subtitle">How to Apply</h4>
+                    <p>
+                      <%- job.how_to_apply %>
+                    </p>
+                </div>
               </div>
 
               <% })%>

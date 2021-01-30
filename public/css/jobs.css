@@ -3,13 +3,17 @@ body,h1 {font-family: "Raleway", sans-serif; margin: 0 auto;}
 
 /* header */
 ul {
+  background-color: whitesmoke !important;
   list-style-type: none;
+
+}
+nav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #004a7c;
-}
+  background-color: #005691;
 
+}
 li {
   float: left;
 }
@@ -35,6 +39,14 @@ li a:active {
   text-decoration: underline;
 }
 
+p {
+  display: inline;
+  text-align: left !important;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  line-height: 1.5;
+}
+
 /* Header End */
 
 .top {
@@ -50,11 +62,21 @@ li a:active {
 }
 
 .results {
-  padding: 20px 30px;
-  margin: 10px;
-  background-color: rgb(211, 211, 211);
+  padding: 3% 5%;
+  margin: 2% auto;
+  background-color: whitesmoke;
   position: relative;
   border-radius: 6px;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  overflow-x: hidden;
+}
+
+.company-subtitle {
+  text-decoration: underline;
 }
 
 
@@ -163,6 +185,25 @@ footer a:active {
   background-color: black;
   opacity: 0.5;
   z-index: 1;
+}
+
+.img-circle {
+  /* border-radius: 50%; */
+  padding-right: 2%;
+  width: 18rem;
+}
+
+.title-group {
+  display: flex;
+  align-items: center;
+}
+
+.company-title {
+  font-size: 2rem;
+}
+
+.company-info-group {
+  display: grid;
 }
 
 @media (pointer: coarse) and (hover: none) {
