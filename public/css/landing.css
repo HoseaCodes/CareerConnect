@@ -1,5 +1,17 @@
+/* @font-face {
+  font-family: 'Bebas';
+  src: url('../fonts/bebas_neue/BebasNeue-Regular.eot'), IE9 Compat Modes
+       url('../fonts/bebas_neue/BebasNeue-Regular.woff2') format('woff2'), Super Modern Browsers
+       url('../fonts/bebas_neue/BebasNeue-Regular.woff') format('woff'), Pretty Modern Browsers
+       url('../fonts/bebas_neue/BebasNeue-Regular.ttf')  format('truetype'), Safari, Android, iOS
+}
+body {
+  font-family: 'Bebas', sans-serif;
+} */
 body {
   margin: 0;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+
 }
 
 .container { 
