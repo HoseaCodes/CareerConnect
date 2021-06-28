@@ -6,10 +6,9 @@ module.exports = {
 
 function index(req, res) {
     Hunter.find({}, function(err, hunters) {
-        res.render('index', {
+        res.render('bootcamp/index', {
             hunters,
             user: req.user
         });
     });
 }
-

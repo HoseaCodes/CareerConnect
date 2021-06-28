@@ -1,0 +1,12 @@
+.unit-breakdown h3 {
+  color: #004a7c;
+  font-weight: 700;
+}
+
+.unit-breakdown {
+  padding-bottom: 4%;
+}
+
+.disabled {
+  color: gray !important;
+}

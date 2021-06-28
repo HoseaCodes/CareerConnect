@@ -1,0 +1,174 @@
+<%- include('../partials/header') %>
+    <!-- icons -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!-- Personal Stylesheet -->
+    <link rel="stylesheet" href="/css/feed/style.css" />
+    <script defer src="/js/count.js"></script>
+
+
+    <div class="Logo2">
+        <a href="https://imgur.com/Mc6BdV0"><img src="https://i.imgur.com/Mc6BdV0.png" height="200" width="200"
+                title="source: imgur.com" /></a>
+        <h1 class="feed">Assessments</h1>
+    </div>
+    <div class="box">
+        <!-- Middle Column -->
+        <div class="middle">
+            <div>
+                <div class="card">
+                    <div class="question-text">
+                        <h2> Python Flash Cards</h2>
+                        <h3 id="pythonQuestion"><span>Question: Do you know Python? </span> </h3>
+                        <h3 id="pythonAnswer"><span>Answers: Test Your Might</span> </h3>
+                    </div>
+                    <button id="pythonBtn">Click Here</button>
+                </div>
+                <div class="card">
+                    <h2>Python Online Test</h2>
+                    <p>This Python Online Test simulates a real online certification exams. You will be presented
+                        Multiple Choice Questions (MCQs) based on Python Concepts, where you will be given four
+                        options. You will select the best suitable answer for the question and then proceed to the
+                        next question without wasting given time. You will get your online test score after
+                        finishing the complete test.</p>
+                    <div>
+                        <h3>Total Questions</h3>
+                        <div><span id="time">48:00</span></div>
+                        <h3 id="minutes"></h3>
+                        <h3 id="seconds"></h3>
+                        <h3>Max Time 48 Mins</h3>
+                    </div>
+
+                    <button id="start">Start Quiz</button>
+                </div>
+
+            </div>
+            <div>
+                <div class="card">
+                    <div class="question-text">
+                        <h2> JavaScript Flash Cards</h2>
+                        <h3 id="javaScriptQuestion"><span>Question: Do you know JavaScript? </span> </h3>
+                        <h3 id="javaScriptAnswer"><span>Answers: Test Your Might</span> </h3>
+                    </div>
+                    <button id="javaScriptBtn">Click Here</button>
+                </div>
+                <div class="card">
+                    <h2>JavaScript Online Test</h2>
+                    <p>This JavaScript Online Test simulates a real online certification exams. You will be presented
+                        Multiple Choice Questions (MCQs) based on JavaScript Concepts, where you will be given four
+                        options. You will select the best suitable answer for the question and then proceed to the
+                        next question without wasting given time. You will get your online test score after
+                        finishing the complete test.</p>
+                    <div>
+                        <h3>Total Questions</h3>
+                        <div><span id="time">48:00</span></div>
+                        <h3 id="minutes"></h3>
+                        <h3 id="seconds"></h3>
+                        <h3>Max Time 48 Mins</h3>
+                    </div>
+
+                    <button id="start">Start Quiz</button>
+                </div>
+
+            </div>
+            <div>
+                <div class="card">
+                    <div class="question-text">
+                        <h2> React Flash Cards</h2>
+                        <h3 id="reactQuestion"><span>Question: Do you know Python? </span> </h3>
+                        <h3 id="reactAnswer"><span>Answers: Test Your Might</span> </h3>
+                    </div>
+                    <button id="reactBtn">Click Here</button>
+                </div>
+                <div class="card">
+                    <h2>React Online Test</h2>
+                    <p>This React Online Test simulates a real online certification exams. You will be presented
+                        Multiple Choice Questions (MCQs) based on React Concepts, where you will be given four
+                        options. You will select the best suitable answer for the question and then proceed to the
+                        next question without wasting given time. You will get your online test score after
+                        finishing the complete test.</p>
+                    <div>
+                        <h3>Total Questions</h3>
+                        <div><span id="time">48:00</span></div>
+                        <h3 id="minutes"></h3>
+                        <h3 id="seconds"></h3>
+                        <h3>Max Time 48 Mins</h3>
+                    </div>
+
+                    <button id="start">Start Quiz</button>
+                </div>
+
+            </div>
+
+            <% hunters.forEach(function(hunter) { %>
+                <!-- User Inputs -->
+                <% hunter.assessments.map(function(assessments, idx) { %>
+                    <div class="hunters">
+                        <h4>
+                            <%= hunter.name %>
+                        </h4>
+                        <% if (hunter=="" ) { %>
+                            <img src="https://i.imgur.com/KB9fMRj.png" alt="Avatar" style="width:40px">
+                            <% } else { %>
+                                <img class="profilePic" src="<%=hunter.avatar%>" width="100" height="100"
+                                    alt="That's You!">
+                                <% } %>
+                                    </p>
+                                    <p>
+                                        <strong>Question: </strong>
+                                        <%= assessments.questions %>
+                                    </p>
+                                    <p>
+                                        <strong>Answers: </strong>
+                                        <%= assessments.answers %>
+                                    </p>
+                                    <hr>
+                                    <p>Post was created:<%=assessments.createdAt %>
+                                            <% if (hunter._id.equals(user && user._id)) { %>
+                                                <button type="button"><i class="fa fa-pencil-square-o"
+                                                        aria-hidden="true"></i>
+                                                    <a href="/assessments/<%= assessments._id %>/edit"> Edit
+                                                        Comment</a></button>
+                                                <button type="button"><i class="fa fa-thumbs-o-up"
+                                                        aria-hidden="true"></i>Like</button>
+                                                <form action="/assessments/<%= assessments._id %>?_method=DELETE"
+                                                    class="delete-form" method="POST">
+                                                    <button type="submit">🗑Delete Post</button>
+                                                </form>
+                                                <% } %>
+                    </div>
+                    <% }) %>
+                        <!-- Add Dynamic UI form below this line -->
+                        <% if (hunter._id.equals(user && user._id)) { %>
+                            <div class="">
+                                <form action="/assessments" method="POST">
+                                    <h3>Create Assessment Question</h3>
+                                    <label for="questions">Questions</label>
+                                    <input type="text" name="questions" placeholder="Question">
+                                    <br>
+                                    <label for="answers">Answers</label>
+                                    <input type="text" name="answers" placeholder="Answers">
+                                    <br>
+                                    <button type="submit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                        Create Q&A</button>
+                                </form>
+                            </div>
+                            <% } %>
+                                <% }) %>
+        </div>
+        <!-- Right Column -->
+        <div class="right">
+            <h2>Top Rated Q &A</h2>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Q&A1</h5>
+                    <p class="card-text">
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <%- include('../partials/footer') %>
