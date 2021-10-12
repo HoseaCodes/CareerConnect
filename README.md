@@ -2,7 +2,7 @@
 
 ![CareerConnect](https://i.imgur.com/Mc6BdV0.png)
 
-New devs have an difficult time making a transition into the world of Tech. Career Connect helps new devs find a single place for development resources, networking and searching for jobs. On the home page, you will see an area to register and search for careers. The other options profile and networking are locked until you register.  
+New devs have an difficult time making a transition into the world of Tech. Career Connect helps new devs find a single place for development resources, networking and searching for jobs. On the home page, you will see an area to register and search for careers. The other options profile and networking are locked until you register.
 
 ## Created by: Dominique Hosea
 
@@ -11,33 +11,59 @@ New devs have an difficult time making a transition into the world of Tech. Care
 ## Data Structre
 
 ### Github Jobs API
+
 ![GitHub Jobs API](https://i.imgur.com/sdP1PLa.png)
 ![GitHub Jobs API](https://i.imgur.com/c5E9ji0.png)
 
-### MVC 
+### MVC
+
 #### Model
+
 ![Model](https://i.imgur.com/yDCcCE3.png)
+
 #### View (Conditional Rendering)
+
 ![View](https://i.imgur.com/4ibvheK.png)
+
 #### Controller
+
 ![Controller](https://i.imgur.com/nLsl9UN.png)
 
 ### User Login
+
 #### Passport
+
+![Passport](https://i.imgur.com/HluIAmx.png)
+
+#### Model
+
+![Model](https://i.imgur.com/yDCcCE3.png)
+
+#### View (Conditional Rendering)
+
+![View](https://i.imgur.com/4ibvheK.png)
+
+#### Controller
+
+![Controller](https://i.imgur.com/nLsl9UN.png)
+
+### User Login
+
+#### Passport
+
 ![Passport](https://i.imgur.com/HluIAmx.png)
 
 ## Wire Frame
-______________________________________________________________________________________
 
-![Imgur](https://i.imgur.com/v3yudxV.png)
+---
 
-![Imgur](https://i.imgur.com/haPpfAm.png)
+| Group 1                                   | Group 2                                   |
+| ----------------------------------------- | ----------------------------------------- |
+| ![Imgur](https://i.imgur.com/v3yudxV.png) | ![Imgur](https://i.imgur.com/haPpfAm.png) |
+| ![Imgur](https://i.imgur.com/tTHl8iG.png) | ![Imgur](https://i.imgur.com/vXhOdg5.png) |
 
-![Imgur](https://i.imgur.com/tTHl8iG.png)
+---
 
-![Imgur](https://i.imgur.com/vXhOdg5.png)
-
-____________________
 User Stories for Career Connect v1
 
 AAU (As u User)
@@ -74,15 +100,20 @@ Dependencies used:
 - Passport - authenticate requests through an extensible set of plugins
 - Mongoose - for MongoDB validation
 - Materialize - a library for building pre-styled components
-- jQuery - a fast, small, and feature-rich JavaScript library 
+- jQuery - a fast, small, and feature-rich JavaScript library
 
 ## Getting Started
-____________________
+
+---
 
 [Click here](https://careerconnect.herokuapp.com/) to open app in browser.
-____________________
+
+---
 
 ## Future Enhancements
-____________________
+
+---
+
 1. "As a user, I should be able to click on an individual job and be navigated to a page where I see all the details for that particular job within the website."
 2. "As a user, I should be able to see company reviews, salary, and hiring manager info from the feed."
+3. "As a user, I should be able to complete LinkedIn's easy apply button."

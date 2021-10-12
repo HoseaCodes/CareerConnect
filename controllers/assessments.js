@@ -1,12 +1,5 @@
 const Hunter = require('../models/hunter');
 
-module.exports = {
-    index,
-    addAssessment,
-    deleteAssessment,
-
-}
-
 function index(req, res) {
     Hunter.find({}, function (err, hunters) {
         if (err) return res.render('feed/index')
@@ -34,4 +27,10 @@ function deleteAssessment(req, res) {
         if (err) return res.render('/assessments')
         res.redirect('/assessments');
     });
+}
+
+module.exports = {
+    index,
+    addAssessment,
+    deleteAssessment,
 }

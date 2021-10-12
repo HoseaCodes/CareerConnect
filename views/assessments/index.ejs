@@ -100,9 +100,7 @@
             </div>
 
             <% hunters.forEach(function(hunter) { %>
-
                 <!-- User Inputs -->
-
                 <% hunter.assessments.map(function(assessments, idx) { %>
                     <div class="hunters">
                         <h4>
@@ -121,7 +119,6 @@
                                     </p>
                                     <p>
                                         <strong>Answers: </strong>
-
                                         <%= assessments.answers %>
                                     </p>
                                     <hr>
@@ -140,7 +137,6 @@
                                                 <% } %>
                     </div>
                     <% }) %>
-
                         <!-- Add Dynamic UI form below this line -->
                         <% if (hunter._id.equals(user && user._id)) { %>
                             <div class="">
